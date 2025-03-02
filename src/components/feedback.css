@@ -1,0 +1,143 @@
+
+.feedbackcon{
+  background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217,0));
+  background-image: url('../media/bgupage4.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.feedbackcon2{
+  background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217,0));
+
+}
+
+.buttonincon{
+    width:100%;
+    padding:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: linear-gradient(130deg, #0091ff,#061928,#061928, #ff6161);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 300;
+    gap:5px;
+    transition-property: background, filter;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  }
+
+  .buttonincon:hover{
+    filter: hue-rotate(270deg);
+    
+  }
+
+  .buttoninconnew{
+    width:'fit-content';
+    padding:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: linear-gradient(130deg, #0091ff,#061928,#061928, #ff6161);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 300;
+    gap:5px;
+    transition-property: background, filter;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  }
+
+  .buttoninconnew:hover{
+    filter: hue-rotate(270deg);
+    
+  }
+
+
+  input:focus{
+    outline: 4px solid white;
+  }
+
+  textarea:focus{
+    outline: 4px solid white;
+  }
+
+  @keyframes scaleUpDown {
+    0% {
+      transform: scale(1); /* Start at full size */
+      opacity: 1;
+    }
+    50% {
+      transform: scale(0.2); /* Scale down to 50% */
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1); /* Scale back to full size */
+      opacity: 1;
+    }
+  }
+
+ 
+
+  
+  .animated-mail {
+    position: absolute;
+    animation: scaleUpDown 3s infinite; /* Animation duration set to 3 seconds and loops infinitely */
+    width: 100px;
+    height: 100px;
+  }
+
+
+  /* ContactPage.css */
+
+.contact-page {
+    
+  margin: 0 auto;
+  padding: 10px;
+  background-color: rgb(217, 217, 217,0);
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+font-optical-sizing: auto;
+font-weight: 400;
+}
+
+.contact-icon {
+  color: #383838; /* Icon color */
+  margin-right: 15px; /* Space between icon and text */
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #3a3a3a; /* Link color */
+  /* font-weight: bold; */
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #333;
+}
+
+  

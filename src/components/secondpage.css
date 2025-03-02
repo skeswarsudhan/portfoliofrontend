@@ -1,0 +1,197 @@
+.sp-big-container {
+    display: flex; /* Use flexbox to arrange items horizontally */
+    flex-direction: column;
+    justify-content: space-between; /* Optional: Adjust spacing between items */
+    padding: 10px; /* Optional: Add padding around the big container */
+    background-color: rgba(217, 217, 217, 0);
+    background: linear-gradient(180deg,rgb(217, 217, 217));
+    /* background-image: url('../media/bgpage2.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;  */
+    
+   
+   
+  }
+  
+  /* Inner containers */
+  .spcontainer1{
+    flex: 1; /* Each container will take up equal space */
+    margin: 10px; /* Optional: Add margin around inner containers */
+    padding: 30px; /* Optional: Add padding inside inner containers */
+    margin-left: 10%;
+   
+    border: 1px solid #00000000; /* Optional: Add a border around inner containers */
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+   
+  }
+
+  .spcontainer2{
+    flex: 2.5; /* Each container will take up equal space */
+    margin: 10px; /* Optional: Add margin around inner containers */
+    margin-right: 10%;
+    padding: 30px; /* Optional: Add padding inside inner containers */
+    border: 1px solid #00000000; /* Optional: Add a border around inner containers */
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+  }
+  .spcontainer3{
+    flex: 2.5; /* Each container will take up equal space */
+    margin: 10px; /* Optional: Add margin around inner containers */
+    margin-right: 10%;
+    margin-left: 10%;
+    padding: 30px; /* Optional: Add padding inside inner containers */
+    border: 1px solid #00000000; /* Optional: Add a border around inner containers */
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+  }
+
+  .sph2{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  
+    align-items: center;
+    justify-content: center;
+    font-variation-settings: "wdth" 70;
+    background: linear-gradient( #212541,#212541);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+   
+    font-size: 1.5vw;
+    transition-property: background, filter;
+   
+    z-index: 3; /* Highest z-index to ensure it is above everything else */
+    margin: 0; /* Remove default margins */
+  }
+
+  .sph3{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  
+    align-items: center;
+    justify-content: center;
+    font-variation-settings: "wdth" 70;
+    background: linear-gradient( #212541,#212541);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+   
+    font-size: 1.5vw;
+    transition-property: background, filter;
+   
+    z-index: 3; /* Highest z-index to ensure it is above everything else */
+    margin: 0; /* Remove default margins */
+  }
+
+
+
+  .sph1 {
+    background: linear-gradient(200deg,  #ff6cdf, #58227c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 2vw;
+  
+    transition-property: background, filter;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    z-index: 3; /* Highest z-index to ensure it is above everything else */
+    margin: 0; /* Remove default margins */
+    opacity: 0; /* Initially invisible */
+    
+  }
+
+  .sph1.ip {
+    background: linear-gradient(200deg,  #ff6c6c, #2e227c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 2vw;
+    transition-property: background, filter;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    z-index: 3; /* Highest z-index to ensure it is above everything else */
+    margin: 0; /* Remove default margins */
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease-in forwards; /* Fade-in animation */
+  }
+
+  .sph1.ds {
+    background: linear-gradient(200deg,  #6cff9b, #22267c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 2vw;
+    transition-property: background, filter;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    z-index: 3; /* Highest z-index to ensure it is above everything else */
+    margin: 0; /* Remove default margins */
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease-in forwards; /* Fade-in animation */
+  }
+
+  .sph1.da {
+    background: linear-gradient(200deg,  #ff6cdf, #520d0d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 2vw;
+    transition-property: background, filter;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    z-index: 3; /* Highest z-index to ensure it is above everything else */
+    margin: 0; /* Remove default margins */
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease-in forwards; /* Fade-in animation */
+  }
+
+  .sph1.wd {
+    background: linear-gradient(200deg,  #ff6cdf, #58227c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 2vw;
+    transition-property: background, filter;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    z-index: 3; /* Highest z-index to ensure it is above everything else */
+    margin: 0; /* Remove default margins */
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease-in forwards; /* Fade-in animation */
+  }
+  
+  .sph1.fade-in {
+    opacity: 1; /* Fade in to visible */
+    animation: fadeIn 0.5s ease-in forwards; /* Fade-in animation */
+  }
+  
+  .sph1:hover {
+    filter: hue-rotate(270deg);
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1; /* Fade in to visible */
+    }
+  }
+
+  .fade-in-section {
+    opacity: 0;
+    
+    transform: translateY(7vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, visibility;
+  }
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }

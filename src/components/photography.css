@@ -1,0 +1,180 @@
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+        transform: translateX(-300%);
+    }
+  }
+  
+  .parentcon {
+    padding-top: 15vh;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgb(217, 217, 217,0); */
+    background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217),rgb(217, 217, 217));
+    align-items: center;
+    justify-content: center;
+    background-image: url('../media/bgphoto2.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
+  }
+  
+  .photography-container {
+    background-image: url('../media/bg3re.jpg'); /* Ensure the image path is correct */
+    background-size: cover; /* Maintain proportional resizing */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    height: 80vh; /* Container takes up 80% of the viewport height */
+    width: 90vw; /* Container takes up 90% of the viewport width */
+    border-radius: 30px;
+    position: relative; /* Enable absolute positioning within it */
+    margin-bottom: 5vh;
+}
+
+.png-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%; /* Match the height of the parent container */
+    width: 100%; /* Match the width of the parent container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.png-overlay img {
+    max-width: 100%; /* Ensure the image width stays within the container */
+    max-height: 100%; /* Ensure the image height stays within the container */
+    object-fit: cover; /* Ensure the image covers the overlay proportionally */
+}
+
+  
+  .text-container {
+    position: relative;
+    height: 100%; /* Ensure the text-container takes the full height of the parent */
+    width: 100%; /* Ensure the text-container takes the full width of the parent */
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .toph1 {
+    position: absolute;
+    top: 50%; /* Position it at 30% from the top */
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    color: rgb(57, 57, 57); /* Ensure the text is visible against the background */
+    font-size: 5vw;
+    margin-top: 14%;
+    z-index: 1;
+    
+    
+  
+  }
+  
+  .toph1.is-visible {
+    opacity: 1;
+    transform: translateX(-50%);
+    visibility: visible;
+  }
+  
+  .both1 {
+    position: absolute;
+    bottom: 25%; /* Position it at 20% from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center it horizontally */
+    color: rgb(255, 255, 255); /* Ensure the text is visible against the background */
+    font-size: 5vw;
+    margin: 0;
+    z-index: 3;
+  }
+  
+  .images-container {
+    overflow: hidden;
+    overflow-x: scroll;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    background-color: rgb(217, 217, 217,0);
+  }
+  
+  .images-container:before,
+  .images-container:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .images-container:before {
+    left: 10;
+    /* background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(220, 220, 220)); */
+  }
+  
+  .images-container:after {
+    right: 0;
+    /* background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(220, 220, 220)); */
+  }
+  
+  .images-container:hover .images-slide {
+    animation-play-state: paused;
+  }
+  
+  .images-slide {
+    display: inline-block;
+    /* animation: 25s slide infinite linear; */
+  }
+  
+  .image-wrapper {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .image-item {
+    height: 400px; /* Set a maximum height for the images */
+    border-radius: 30px;
+    object-fit: contain;
+    /* margin:20px; */
+  }
+  
+  .images-container::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+  }
+  
+  .images-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .images-container::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+  
+  .fade-in-section-ph {
+    opacity: 1;
+    transform: translateY(25vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.5s ease-out;
+    will-change: opacity, visibility;
+  }
+  
+  .fade-in-section-ph.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1; /* Fade in to visible */
+    }
+  }
+  

@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "image_path": "/images/download (1).jpg",
+        "tag": "Nature"
+    },
+    {
+        "id": "2",
+        "image_path": "/images/download.jpg",
+        "tag": "Nature"
+    },
+    {
+        "id": "3",
+        "image_path": "/images/download (2).jpg",
+        "tag": "Nature"
+    },
+    {
+        "id": "4",
+        "image_path": "/images/download (3).jpg",
+        "tag": "Nature"
+    },
+    {
+        "id": "5",
+        "image_path": "/images/download (5).jpg",
+        "tag": "Nature"
+    },
+    {
+        "id": "6",
+        "image_path": "/images/download (4).jpg",
+        "tag": "Nature"
+    }
+]

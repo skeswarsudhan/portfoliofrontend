@@ -1,0 +1,195 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: rgb(217, 217, 217,0);
+  align-items: center;
+  justify-content: center;
+  /* background-image: url('../media/bgpage1.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center; */
+ 
+  
+}
+
+.mp-maincon2 {
+  position: relative; /* This ensures absolute children are positioned relative to this */
+  height: 80%;
+  width: 88%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  background-image: url('../media/pfbg.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* animation: scaleDown 1.5s ease-out forwards; */
+  overflow: hidden; /* Ensures child elements don't overflow */
+}
+
+.mp-maincon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../media/pfup3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -20px center; /* Start slightly left */
+  z-index: 2;
+  animation: bgSlideIn 1.5s ease-out forwards;
+}
+
+@keyframes bgSlideIn {
+  from {
+    background-position: -20px center; /* Start 20px to the left */
+  }
+  to {
+    background-position: center; /* Move to normal position */
+  }
+}
+
+
+
+@keyframes scaleDown {
+  from {
+    background-size: 150%;
+  }
+  to {
+    background-size: cover;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    background-size: 90%;
+  }
+  to {
+    background-size: 100%;
+  }
+}
+
+.overlay-image {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%) scale(0.8); /* Start at 80% size */
+  width: 45%;
+  height: auto;
+  opacity: 0.8; /* Adjust overlay visibility */
+  /* animation: scaleUp 1.5s ease-out forwards; */
+}
+
+
+
+.mp-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 70;
+  background-color: transparent; /* Make background transparent */
+  z-index: 2; /* Higher z-index to ensure it overlaps the image */
+  position: absolute; /* Absolute positioning for overlap */
+  
+ 
+}
+
+.mp-text-container.left {
+  top:35%;
+  left: 7%; /* Adjust left position as needed */
+}
+
+.mp-text-container.right {
+  top:50%;
+  right: 7%; /* Adjust right position as needed */
+}
+
+.mp-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46.5%;
+  padding: 20px;
+  z-index: 1; /* Lower z-index to ensure image is below text */
+  position: relative;
+}
+
+
+.mph1 {
+  padding: 30px;
+  margin-bottom: 50px;
+  background: linear-gradient(130deg,  #59b7ff , #ff7676);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  transition-property: filter;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 7vw;
+  z-index: 300;
+  margin: 0;
+  opacity: 1;
+ 
+  /* animation: reveal 2s ease-out forwards, fadeIn 2s ease-in forwards; */
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(0%); /* Start off-screen */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move into place */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.mph1:hover {
+  filter: hue-rotate(270deg);
+}
+
+.mph2 {
+  background: linear-gradient(200deg, #b6b6b6, #11121a,  #989898);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 20px;
+  font-size: 4vw;
+  font-weight: 400;
+  transition-property: background, filter;
+ 
+  z-index: 3; /* Highest z-index to ensure it is above everything else */
+  margin: 0; /* Remove default margins */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  z-index: 0; /* Ensure image is at the bottom */
+}
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+} */

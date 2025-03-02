@@ -1,0 +1,249 @@
+.projectcon{
+  background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217));
+  background-image: url('../media/bgpage3.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+    
+}
+.projectcon2{
+  background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217));
+  z-index: 2;
+}
+
+.controls {
+
+  
+    background-color: rgb(217, 217, 217,0);
+    font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: medium;
+  }
+
+  .controlcon{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 20%;
+        margin-right: 20%;
+        gap: 20px;
+        padding: 30px;
+        background-color: rgb(243, 243, 243);
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+        font-size: medium;
+        position: relative;
+        z-index: 1;
+        border-radius: 30px; /* Rounding the corners */
+        overflow: hidden; /* To hide the overflow of the pseudo-element */
+      
+  }
+  
+  .controls label {
+    margin-right: 20px;
+  }
+  
+  .filter-group {
+    display: flex;
+    gap:10px;
+    margin-top: 10px;
+    font-size: large;
+  }
+
+  .buttoncon{
+    padding:10px;
+    margin-right:5%;
+    background-color: rgb(217, 217, 217,0);
+    display: flex;
+    align-items: center;
+    gap:5px;
+  }
+  .buttoninconApply{
+    width:100px;
+    padding:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: linear-gradient(130deg, #0091ff,#061928,#061928, #ff6161);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 300;
+    gap:5px;
+    transition-property: background, filter;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  }
+
+  .buttoninconApplied{
+    width:100px;
+    padding:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: linear-gradient(130deg, #0cc92b,#061928,#061928, #d761ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: 300;
+    gap:5px;
+    transition-property: background, filter;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  }
+
+  .buttoninconApply:hover{
+    filter: hue-rotate(270deg);
+    
+  }
+
+  .rs-btn-primary {
+    background-color: linear-gradient(180deg, #0091ff, #ff0000);
+    color: white;
+    
+  }
+
+  .rs-btn-primary:hover {
+    background-color: #094f0c;
+    color: white;
+    
+  }
+
+  .projecttitlecard{
+    font-family: "Open Sans", sans-serif;
+    background-color: rgb(217, 217, 217,0);
+   padding-top: 60px;
+   padding-bottom: 30px;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 4vw;
+    text-align: center;
+  }
+  
+  .projects-container {
+    /* background-image: url('../media/bg2.jpg'); 
+  background-size: cover;  */
+  /* background-image: url('../media/bgprojectnew.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;  */
+  background-position: center; /* Center the image */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(217, 217, 217,0);
+    /* background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217),rgb(217, 217, 217)); */
+    }
+  
+  .project-card {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: medium;
+    background-color: #ffffff;
+    border-radius: 20px;
+  
+    
+    padding: 40px;
+    width: calc(40% - 30px);
+    box-sizing: border-box;
+  }
+  
+  .project-card h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .project-card h5 {
+    margin-top: 0;
+    font-weight: 550;
+    margin-bottom: 20px;
+  }
+
+  .image-processing {
+    background: linear-gradient(180deg, #0091ff, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: right;
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 20px;
+  }
+
+  .data-science {
+    background: linear-gradient(180deg, #00ffd0, #015ac0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: right;
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 20px;
+  }
+
+  .data-analysis {
+    background: linear-gradient(180deg, #ff00a6, #0095ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: right;
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 20px;
+  }
+
+  .web-development {
+    background: linear-gradient(180deg, #ff00c8, #550054);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: right;
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 20px;
+  }
+
+
+  .rs-picker-has-value .rs-btn .rs-picker-toggle-value, .rs-picker-has-value .rs-picker-toggle .rs-picker-toggle-value {
+    color:rgb(75, 75, 75)
+  }
+
+  .rs-picker-select-menu-item.rs-picker-select-menu-item-active {
+    color:rgb(40, 40, 40)
+  }
+
+  .rs-picker-select-menu-item.rs-picker-select-menu-item-focus, .rs-picker-select-menu-item:focus, .rs-picker-select-menu-item:hover {
+    background-color: rgb(240, 240, 240);
+    color: rgb(40, 40, 40);
+    border-color: rgb(217, 217, 217,0);
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+    outline: none;
+  }
+
+  .rs-checkbox-control [type=checkbox] {
+   
+    background-color: rgb(20, 191, 139);
+  }
+
+  .rs-checkbox-checker{
+    padding-top: 7px;
+  }
+
+  .rs-theme-light, :root {
+    --rs-checkbox-checked-bg: rgb(122, 122, 122);
+   
+  }
+
+  
+  @media (max-width: 768px) {
+    .project-card {
+      width: 100%;
+    }
+  }
+  

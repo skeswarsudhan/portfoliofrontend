@@ -1,0 +1,98 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100vw;
+    
+    
+    color: rgb(132, 132, 132);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 70;
+    background-image: url('../media/black_wavy_lines_background.jpg');
+    background-size: cover; /* Adjust as needed: cover, contain, or specific size */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .navbar-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  }
+  
+  .navbar-brand {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings: "wdth" 70;
+    font-size: 24px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    
+    margin-right: 40px;
+  }
+  
+  .navbar-dropdown {
+    background-color: #ffffff;
+    position: relative;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+  }
+
+  
+  .dropdown-toggle {
+    background: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 70;
+   
+    transition: transform 0.5s ease-in-out;
+    
+  }
+  
+  .navbar-dropdown:hover {
+    transform: translateY(-5px); /* Adjust the value as needed */
+    cursor: pointer;
+    
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    width:fit-content;
+    background-color: white;
+    color: black;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+  }
+  
+  .dropdown-menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #ddd;
+    
+  }
+  

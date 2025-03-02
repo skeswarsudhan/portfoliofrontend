@@ -1,0 +1,46 @@
+/* ContactPage.css */
+
+.contact-page {
+    
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgb(217, 217, 217,0);
+    border-radius: 10px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  }
+  
+  .contact-icon {
+    color: #383838; /* Icon color */
+    margin-right: 15px; /* Space between icon and text */
+  }
+  
+  .contact-item a {
+    text-decoration: none;
+    color: #3a3a3a; /* Link color */
+    /* font-weight: bold; */
+  }
+  
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #333;
+  }
+  

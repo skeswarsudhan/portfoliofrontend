@@ -1,0 +1,204 @@
+.chatcontainer {
+  min-height: 200px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  background-color: rgba(255, 255, 255, 0);
+  overflow: hidden; /* Prevent unwanted scrollbars */
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+.iconcon{
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  /* background-color: #59b7b1; */
+  margin-right: 20px;
+  margin-bottom: 25px;
+  background-image: url('../media/icon1.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Hide scrollbar in WebKit browsers */
+.chatcontainer::-webkit-scrollbar {
+  display: none;
+}
+
+  .message {
+      margin-bottom: 10px;
+      /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+      
+     
+    }
+    
+    .user-message {
+      /* background-color: #3b3b3b; */
+      width: fit-content;
+      background: linear-gradient(135deg, #161616, #626262);
+      right:0;
+      color: white;
+      align-self: flex-end;
+      max-width: 500px;
+      display: flex;
+      flex-wrap: wrap; /* Add this line */
+      padding: 20px;
+      margin-bottom: 25px; /* Add some bottom margin to separate messages */
+      border-radius: 20px 0px 20px 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    
+    
+    .opposite-message-1 {
+      background: linear-gradient(135deg, #56185f, #fb5bbb);
+      /* background: linear-gradient(135deg, #3e405e, #ff6767); */
+      
+      color: #333;
+      left: 0%;
+     width:fit-content;
+     padding: 20px;
+     color: white;
+     max-width: 600px;
+      display: flex;
+      flex-wrap: wrap; /* Add this line */
+      margin-bottom: 15px; /* Add some bottom margin to separate messages */
+      border-radius: 0px 20px 20px 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .opposite-message-2 {
+      background: linear-gradient(135deg, #3e405e, #ff6767);
+      
+      color: #333;
+      left: 0%;
+     width:fit-content;
+     padding: 20px;
+     color: white;
+     max-width: 500px;
+      display: flex;
+      flex-wrap: wrap; /* Add this line */
+      margin-bottom: 25px; /* Add some bottom margin to separate messages */
+      border-radius: 0px 20px 20px 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    .opposite-message-3 {
+      background: linear-gradient(135deg, #00538e, #8bb759);
+      
+      color: #333;
+      left: 0%;
+     width:fit-content;
+     padding: 20px;
+     color: white;
+     max-width: 600px;
+      display: flex;
+      flex-wrap: wrap; /* Add this line */
+      margin-bottom: 15px; /* Add some bottom margin to separate messages */
+      border-radius: 0px 20px 20px 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+  
+    .user-message,
+.opposite-message-1,
+.opposite-message-2,
+.opposite-message-3 {
+    word-wrap: break-word; /* Ensures long words break and wrap */
+    overflow-wrap: break-word; /* Helps with breaking long words */
+    white-space: normal; /* Allows text to wrap to the next line */
+    display: block; /* Helps text behave like a paragraph */
+}
+
+    
+    
+  
+/* Ensure chat messages container fills the modal */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    flex-grow: 1; /* Make it expand */
+    max-height: 55vh; /* Adjust based on modal size */
+    overflow-y: auto; 
+    padding-bottom: 150px;
+    padding-left: 50px;
+    padding-right: 50px;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE/Edge */
+}
+.chat-container::-webkit-scrollbar {
+  display: none;
+}
+
+.buttoninconch {
+  width: 80px;
+  padding: 10px;
+  margin-left: 10px;
+  background: #414141;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 400;
+  gap: 5px;
+  transition: background 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5); /* Added subtle drop shadow */
+}
+
+.buttoninconch:hover {
+  filter: grayscale(50%);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6); /* Slightly deeper shadow on hover for a "lift" effect */
+}
+
+
+
+
+/* Input bar positioning */
+.input-group {
+    position: fixed;
+    width: 90%;
+    bottom: 0;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display:flex;
+    align-items: center;
+    padding-left: 50px;
+    /* padding-right: 50px; */
+    font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    
+    .form-control {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    
+    .input-group-append .btn {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #8e0042, #59b7b1);
+      border-color: #cc00ff;
+    }
+    
+    .btn-primary:hover {
+      background-color: #e14aff;
+      border-color: #0056b3;
+    }
+    
