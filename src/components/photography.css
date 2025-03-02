@@ -16,10 +16,10 @@
     background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217),rgb(217, 217, 217));
     align-items: center;
     justify-content: center;
-    background-image: url('../media/bgphoto2.jpg'); 
+    background-image: url('../media/bgphoto2up.jpg'); 
     background-size: cover; 
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;  
   }
   
   .photography-container {

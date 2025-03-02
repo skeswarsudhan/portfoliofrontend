@@ -41,32 +41,23 @@ const SecondPage = () => {
   return (
     <div className="sp-big-container">
       <FadeInSection>
-      <div style={{ display: 'flex' }}>
-        
-        <div className="spcontainer1">
-          <h3 className='sph3'>About me:</h3>
-          <FadeInSection>
-            <h2 className='sph2'>
-              I work on <span className='sph1 ip'>Projects</span> and take <span className='sph1 ds'>Photos</span>
+        <div style={{ display: 'flex' }}>
+          <div className="spcontainer1">
+            <h3 className="sph3">About me:</h3>
+            <h2 className="sph2">
+              I work on <span className="sph1 ip">Projects</span> and take <span className="sph1 ds">Photos</span>
             </h2>
-          </FadeInSection> 
-        </div>
-       
-        <div className="spcontainer2">
-          {/* Content for container 2 */}
-          Container 2
-          <FadeInSection>
-          <h2 className='sph2'>
-          Hey there! I'm Eswar, an AI engineer with a passion for building full-stack applications and creating meaningful digital experiences. And I also take photos. Welcome to my little corner on the web—happy to have you here!    </h2>
-          </FadeInSection>
-        </div>
-       
-      </div>
-    
-      </FadeInSection>
-      <div className="spcontainer3">
+          </div>
 
-      </div>
+          <div className="spcontainer2">
+            <h2 className="sph2">
+              Hey there! I'm Eswar, an AI engineer with a passion for building full-stack applications and creating meaningful digital experiences. And I also take photos. Welcome to my little corner on the web—happy to have you here!
+            </h2>
+          </div>
+        </div>
+      </FadeInSection>
+
+      <div className="spcontainer3"></div>
     </div>
   );
 };

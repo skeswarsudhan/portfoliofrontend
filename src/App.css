@@ -14,7 +14,7 @@
 }
 
 body{
-  /* background-image: url('./media/bgupre2.jpg'); 
+  /* background-image: url('./media/bgfull1.jpg'); 
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: center;  */
@@ -43,3 +43,10 @@ body{
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 768px), (max-height: 500px) {
+  body {
+    display: none;
+  }
+}
+

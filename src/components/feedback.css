@@ -1,7 +1,7 @@
 
 .feedbackcon{
   background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217,0));
-  background-image: url('../media/bgupage4.jpg');
+  background-image: url('../media/bgupage4up.jpg');
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -107,16 +107,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 3vh;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 3vh;
   font-family: "Open Sans", sans-serif;
 font-optical-sizing: auto;
-font-weight: 400;
+font-weight: 300;
 }
 
 .contact-icon {
