@@ -164,7 +164,7 @@ import Projects from './components/Project';
 import Photography from './components/Photography';
 import MyNavbar from './components/navbar';
 import ContactPage from './components/Contact';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import ServerError from './components/errorPage5xx';
 import ErrorPage4xx from './components/errorPage4xx';
 import ErrorPage3xx from './components/errorPage3xx';
@@ -285,35 +285,32 @@ function App() {
   return (
     <Router>
       <Layout>
-        <Routes>
-          <Route
-            path="/portfolio"
-            element={
-              <>
-                <MainandSecondPage/>
-                <div ref={projectsRef}>
-                  <Projects projectData={projectData} />
-                </div>
-                <div ref={photographyRef}>
-                  <Photography photoData={photoData} />
-                </div>
-                <FeedbackPage />
-                {/* <ContactPage />
-                
-                <Dropdown title="Dropdown 3">
-                  <Dropdown.Item onClick={handleOpenModal}>Open Chat</Dropdown.Item>
-                </Dropdown>
-
-                <ChatboxModal show={showModal} onClose={handleCloseModal} val={1} /> */}
-              </>
-            }
-          />
-          <Route path="/chat" element={<ChatboxModal />} />
-          <Route path="/server-error" element={<ServerError />} />
-          <Route path="/4xx-error" element={<ErrorPage4xx />} />
-          <Route path="/3xx-error" element={<ErrorPage3xx />} />
-          <Route path="*" element={<ErrorPage4xx />} />
-        </Routes>
+      <Routes>
+  {/* Add this redirect from root to /portfolio */}
+  <Route path="/" element={<Navigate to="/portfolio" replace />} />
+  
+  <Route
+    path="/portfolio"
+    element={
+      <>
+        <MainandSecondPage/>
+        <div ref={projectsRef}>
+          <Projects projectData={projectData} />
+        </div>
+        <div ref={photographyRef}>
+          <Photography photoData={photoData} />
+        </div>
+        <FeedbackPage />
+      </>
+    }
+  />
+  {/* Your other routes remain the same */}
+  <Route path="/chat" element={<ChatboxModal />} />
+  <Route path="/server-error" element={<ServerError />} />
+  <Route path="/4xx-error" element={<ErrorPage4xx />} />
+  <Route path="/3xx-error" element={<ErrorPage3xx />} />
+  <Route path="*" element={<ErrorPage4xx />} />
+</Routes>
       </Layout>
     </Router>
   );
