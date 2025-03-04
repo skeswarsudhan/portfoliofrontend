@@ -123,6 +123,7 @@
 .mph1 {
   padding: 30px;
   margin-bottom: 1vh;
+  background-color: #11121a00;
   background: linear-gradient(130deg,  #59b7ff , #ff7676);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -170,7 +171,7 @@
   background: linear-gradient(200deg, #b6b6b6, #11121a,  #989898);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-bottom: 1vh;
+  padding-bottom: 2vh;
   font-size: 4vw;
   font-weight: 400;
   transition-property: background, filter;

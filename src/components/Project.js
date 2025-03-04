@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import axios from 'axios';
 import { Checkbox, CheckboxGroup, Button, SelectPicker } from 'rsuite';
 import 'rsuite/dist/rsuite.min.css';
@@ -8,9 +8,12 @@ import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
 import SortOutlinedIcon from '@mui/icons-material/SortOutlined';
 import FilterListOutlined from '@mui/icons-material/FilterListOutlined';
 import LinkIcon from '@mui/icons-material/Link';
+import './photography.css'; // Make sure to create this CSS file
+import imgurl from '../media/bg7pnre.png';
+// import axios from 'axios';
 
 const categories = ["Image processing", "Data science", "Data Analysis", "Web Development"];
-const tools = ["Python", "R", "Matlab", "SQL", "Pandas"];
+const tools = ["Python", "Reactjs", "Matlab"];
 
 const Projects = ({ projectData }) => {
   const [projects, setProjects] = useState(projectData || []);
@@ -118,7 +121,7 @@ const Projects = ({ projectData }) => {
         <div className="controls">
           <div className="controlcon">
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', alignItems: 'center' }}>
-              <h5 style={{ marginBottom: '3px' }}>Sort by</h5>
+              <h5 style={{ marginBottom: '10px' }}>Sort by</h5>
               <SelectPicker
                 data={[
                   { label: 'Start Date', value: 'start_date' },
@@ -129,7 +132,7 @@ const Projects = ({ projectData }) => {
                 onChange={setSortBy}
                 style={{ width: 224, marginBottom: 10 }}
               />
-              <h5>in</h5>
+              <h5 style={{ marginBottom: '10px' }}>in</h5>
               <SelectPicker
                 data={[
                   { label: 'Ascending', value: 'asc' },
@@ -192,6 +195,7 @@ const Projects = ({ projectData }) => {
       </div>
     </div>
     </div>
+    
   );
 };
 

@@ -1,36 +1,40 @@
-[{"_id":"66ab86f378681a5a1166b5dc",
+[{"_id":"1",
 "category":"Image processing",
+"link":"https://github.com/skeswarsudhan/Image_Compression_using_DCT",
 "description":"Implemented a JPEG image compression system using Discrete Cosine Transform (DCT) in MATLAB. The primary goal was to achieve efficient compression by converting color images to grayscale and applying 2D DCT on it,Successfully developed an image compression algorithm using DCT, optimizing color images into grayscale with a compression rate of 20%. The project showcases proficiency in MATLAB and a deep understanding of image processing techniques",
 "end_date":"2024-12-01",
 "start_date":"2024-01-01",
 "title":"JPEG Image Compression using DCT in MATLAB",
 "tools_used":["Matlab"]},
 
-{"_id":"66ab879e78681a5a1166b5dd",
+{"_id":"2",
 "category":"Image processing",
+"link":"https://github.com/skeswarsudhan/Image_Dehazing",
 "description":"The project aimed to dehaze remote sensing images by employing the Dark Channel Prior (DCP) technique, transforming hazy images into vibrant, saturated representations. Additionally, the objective included quantifying the amount of haze present in the original images By introducing random masks to simulate various atmospheric conditions, the project successfully applied the Dehazing algorithm based on Dark Channel Prior to enhance remote sensing images. The dehazed images were then quantified by measuring the Euclidean distance, providing a clear metric for the amount of haze removed.",
 "end_date":"2023-01-01",
 "start_date":"2022-12-01",
 "title":"Remote Sensing Image Dehazing",
 "tools_used":["Python","Numpy","Matplotlib","Photoshop"]},
 
-{"_id":"66ab881578681a5a1166b5de",
+{"_id":"3",
 "category":"Data science",
+"link":"https://github.com/skeswarsudhan/Emobot",
 "description":"To develop an intelligent chatbot incorporating Facial Emotion Recognition to assess user satisfaction with responses. The chatbot adapts and refines answers based on the user's facial expressions.Implemented a responsive chatbot system where user satisfaction is gauged through facial emotion analysis. Leveraging Langchain, answers were dynamically reframed by the chatbot, showcasing an innovative approach to improving user interaction. Explore this project to witness how cutting-edge technologies can elevate conversational AI, creating a more personalized and engaging user experience.",
 "end_date":"2023-06-01",
 "start_date":"2023-05-01",
 "title":"Enhanced Chatbot with Facial Emotion Recognition",
 "tools_used":["Python","Langchain","OpenCV","Streamlit"]},
 
-{"_id":"66ab888478681a5a1166b5df",
+{"_id":"4",
 "category":"Data science",
+"link":"https://github.com/skeswarsudhan/Music_genre_classification_SimCLR",
 "description":"To Classify music genre of songs using simclr(Contrastive Learning) in unsupervised manner.Implemented a simclr model that classifies music genre with 40% accuracy which is just behind state of the art accuracy 51% considering unsupervised approach.Pytoch audio was used to extract melspectrogram of the song and Lambda labs was used to train GPU intensive training",
 "end_date":"2023-06-01",
 "start_date":"2023-05-01",
 "title":"Music genre classification using simclr",
 "tools_used":["Python","Tensorflow","Pytorch","Lambda labs"]},
 
-{"_id":"66ab88eb78681a5a1166b5e0",
+{"_id":"5",
 "category":"Data Analysis",
 "description":"To forecast confirmed COVID-19 cases in USA states using Dynamic Mode Decomposition (DMD) and conduct a comparative analysis with other forecasting models such as SARIMAX, ARIMA, and ARMA on time series data.Successfully achieved a Root Mean Square Value of 969 cases using DMD, showcasing its superior performance compared to other models. The project demonstrates proficiency in utilizing advanced forecasting techniques and provides valuable insights into the strengths of Dynamic Mode Decomposition in predicting COVID-19 trends.",
 "end_date":"2023-02-01",
@@ -38,73 +42,41 @@
 "title":"Covid-19 Forecasting and Comparative Analysis",
 "tools_used":["Python","Matlab","Pandas"]},
 
-{"_id":"66ab898578681a5a1166b5e1",
+{"_id":"6",
 "category":"Web Development",
-"description":"Developed a comprehensive Pharmacy App using the MERN (MongoDB, Express.js, React, Node.js) stack. The application caters to three distinct user roles: Customer, Admin, and Retaile.A fully functional Pharmacy App that streamlines the buying process for customers, empowers admins with inventory management capabilities, and provides retailers with a convenient way to track and fulfill orders.r",
+"description":"Developed a full-stack portfolio website with a ReactJS frontend and a Flask backend. Integrated a chatbot powered by Retrieval-Augmented Generation (RAG) for answering user queries. Used MongoDB as the database for efficient data storage and retrieval. Implemented REST API for seamless communication between the frontend and backend and utilized Postman for API testing.",
 "end_date":"2023-12-01",
 "start_date":"2023-11-01",
-"title":"Pharmacy App - MERN Stack",
-"tools_used":["MongoDB","Reactjs","Nodejs","Postman"]},
+"title":"My Portfolio",
+"tools_used":["MongoDB","Reactjs","Python","Postman","Flask","Langchain"]},
 
-{"_id":"66b60d3347e5f542490c7734",
-"category":"Image processing",
-"description":"Implemented a JPEG image compression system using Discrete Cosine Transform (DCT) in MATLAB. The primary goal was to achieve efficient compression by converting color images to grayscale and applying 2D DCT on it,Successfully developed an image compression algorithm using DCT, optimizing color images into grayscale with a compression rate of 20%. The project showcases proficiency in MATLAB and a deep understanding of image processing techniques",
-"end_date":"2022-02-22",
-"link":"https://github.com/EswarSudhan/Image_compression_using_DCT", 
-"start_date":"2022-01-01",
-"title":"JPEG Image Compression using DCT in MATLAB",
-"tools_used":["Matlab"]},
-
-{"_id":"66b6111f47e5f542490c7735",
-"category":"Image processing",
-"description":"The project aimed to dehaze remote sensing images by employing the Dark Channel Prior (DCP) technique, transforming hazy images into vibrant, saturated representations. Additionally, the objective included quantifying the amount of haze present in the original images By introducing random masks to simulate various atmospheric conditions, the project successfully applied the Dehazing algorithm based on Dark Channel Prior to enhance remote sensing images. The dehazed images were then quantified by measuring the Euclidean distance, providing a clear metric for the amount of haze removed.",
-"end_date":"2023-01-20",
-"link":"https://github.com/EswarSudhan/image_dehazing",
-"start_date":"2022-12-01",
-"title":"Remote Sensing Image Dehazing",
-"tools_used":["Matlab","Python","Numpy","Matplotlib","Photoshop"]},
-
-{"_id":"66b611d347e5f542490c7736",
+{"_id":"7",
 "category":"Data science",
-"description":"To develop an intelligent chatbot incorporating Facial Emotion Recognition to assess user satisfaction with responses. The chatbot adapts and refines answers based on the user's facial expressions.Implemented a responsive chatbot system where user satisfaction is gauged through facial emotion analysis. Leveraging Langchain, answers were dynamically reframed by the chatbot, showcasing an innovative approach to improving user interaction. Explore this project to witness how cutting-edge technologies can elevate conversational AI, creating a more personalized and engaging user experience.",
-"end_date":"2023-06-28",
-"link":"https://github.com/EswarSudhan/Emobot",
-"start_date":"2023-05-01",
-"title":"Enhanced Chatbot with Facial Emotion Recognition",
-"tools_used":["Python","Langchain","OpenCV","Streamlit"]},
-
-{"_id":"66b6124347e5f542490c7737",
-"category":"Data science",
-"description":"To Classify music genre of songs using simclr(Contrastive Learning) in unsupervised manner.Implemented a simclr model that classifies music genre with 40% accuracy which is just behind state of the art accuracy 51% considering unsupervised approach.Pytoch audio was used to extract melspectrogram of the song and Lambda labs was used to train GPU intensive training.",
-"end_date":"2023-06-25",
-"link":"https://github.com/EswarSudhan/music_genre_classification_simclr",
-"start_date":"2023-05-01",
-"title":"Music genre classification using simCLR",
-"tools_used":["Python","Langchain","OpenCV","Streamlit"]},
-
-{"_id":"66b6126a47e5f542490c7738",
-"category":"Data science",
-"description":"To Classify music genre of songs using simclr(Contrastive Learning) in unsupervised manner.Implemented a simclr model that classifies music genre with 40% accuracy which is just behind state of the art accuracy 51% considering unsupervised approach.Pytoch audio was used to extract melspectrogram of the song and Lambda labs was used to train GPU intensive training.",
-"end_date":"2023-06-25",
-"link":"https://github.com/EswarSudhan/music_genre_classification_simclr",
-"start_date":"2023-05-01",
-"title":"Music genre classification using simCLR",
-"tools_used":["Python","Tensorflow","Pytorch","Lambda labs"]},
-
-{"_id":"66b6131947e5f542490c7739",
-"category":"Data Analysis",
-"description":"To forecast confirmed COVID-19 cases in USA states using Dynamic Mode Decomposition (DMD) and conduct a comparative analysis with other forecasting models such as SARIMAX, ARIMA, and ARMA on time series data.Successfully achieved a Root Mean Square Value of 969 cases using DMD, showcasing its superior performance compared to other models. The project demonstrates proficiency in utilizing advanced forecasting techniques and provides valuable insights into the strengths of Dynamic Mode Decomposition in predicting COVID-19 trends.",
-"end_date":"2023-01-19",
-"link":"",
-"start_date":"2022-12-01",
-"title":"Covid-19 Forecasting and Comparative Analysis",
-"tools_used":["Matlab","Python","Pandas"]},
-
-{"_id":"66b6138f47e5f542490c773a",
-"category":"Web Development",
-"description":"Developed a comprehensive Pharmacy App using the MERN (MongoDB, Express.js, React, Node.js) stack. The application caters to three distinct user roles: Customer, Admin, and Retaile.A fully functional Pharmacy App that streamlines the buying process for customers, empowers admins with inventory management capabilities, and provides retailers with a convenient way to track and fulfill orders.",
-"end_date":"2023-12-16",
-"link":"",
+"link":"https://github.com/skeswarsudhan/irc_cctv",
+"description":" Developed an IRC server using a Raspberry Pi, integrated with a smart CCTV system for real-time motion detection. Utilizing OpenCV, the CCTV detects motion and instantly sends alert messages to an IRC channel where users are connected, enabling remote monitoring and security notifications.",
+"end_date":"2023-12-01",
 "start_date":"2023-11-01",
-"title":"Pharmacy App - MERN Stack",
-"tools_used":["MongoDB","Reactjs","Nodejs","Postman"]}]
+"title":"IRC server connected with CCTV",
+"tools_used":["RasberryPi","Python","OpenCV"]},
+
+{"_id":"8",
+"category":"Data science",
+"link":"https://aclanthology.org/2023.dravidianlangtech-1.14.pdf",
+"description":" Conducted a comparative study on machine learning algorithms, including Naive Bayes, SVM, Random Forest, and KNN, for news article category classification. Utilized feature extraction techniques such as N-gram, TF-IDF, Word2Vec-CBOW, and Word2Vec-SkipGram. The highest accuracy of 0.91 was achieved using Word2Vec-SkipGram combined with Polynomial SVM.",
+"end_date":"2023-12-01",
+"start_date":"2023-11-01",
+"title":"Telugu News Category Prediction: Comparative Study of ML Algorithms",
+"tools_used":["Python","Pandas","Pytorch","Scikit-learn"]}
+
+
+
+
+
+
+
+
+
+
+
+
+]

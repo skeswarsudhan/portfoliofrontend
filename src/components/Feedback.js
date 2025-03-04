@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './feedback.css';
 import AnimatedMail from './AnimatedMail';
-import './contact.css';
+// import './contact.css';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
@@ -77,7 +77,7 @@ const FeedbackPage = () => {
   };
 
   const contactDetails = {
-    github: '',
+    github: 'https://github.com/skeswarsudhan',
     email: 'skeswarsudhan@gmail.com',
     linkedin: 'https://www.linkedin.com/in/skeswarsudhan/',
     location: 'Trichy, Tamil Nadu',
@@ -150,6 +150,7 @@ const FeedbackPage = () => {
                 justifyContent: 'center',
                 backgroundColor: 'rgb(240,240,240)',
                 fontWeight: '400',
+                marginBottom:'1vh'
               }}
             >
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -281,24 +282,24 @@ const FeedbackPage = () => {
           <div className='contact-item'>
             <GitHubIcon className='contact-icon' />
             <a href={contactDetails.github} target='_blank' rel='noopener noreferrer'>
-              GitHub: {contactDetails.github}
+              {contactDetails.github}
             </a>
           </div>
           <div className='contact-item'>
             <EmailIcon className='contact-icon' />
-            <a href={`mailto:${contactDetails.email}`}>Email: {contactDetails.email}</a>
+            <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', padding: '50px' }}>
           <div className='contact-item'>
             <LinkedInIcon className='contact-icon' />
             <a href={contactDetails.linkedin} target='_blank' rel='noopener noreferrer'>
-              LinkedIn: {contactDetails.linkedin}
+              {contactDetails.linkedin}
             </a>
           </div>
           <div className='contact-item'>
             <LocationOnIcon className='contact-icon' />
-            <span>Location: {contactDetails.location}</span>
+            <span> {contactDetails.location}</span>
           </div>
         </div>
       </div>

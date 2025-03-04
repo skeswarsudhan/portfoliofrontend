@@ -201,4 +201,60 @@ textarea {
       background-color: #e14aff;
       border-color: #0056b3;
     }
+
+    .chatcontainerempty{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     
+    .mph1c {
+      padding: 30px;
+      margin-bottom: 1vh;
+      background-color: #11121a00;
+      background: linear-gradient(130deg,  #59b7ff , #ff7676);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      transition-property: filter;
+      transition-duration: 2s;
+      transition-timing-function: ease-in-out;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 4vw;
+      z-index: 300;
+      margin: 0;
+      opacity: 1;
+     
+      /* animation: reveal 2s ease-out forwards, fadeIn 2s ease-in forwards; */
+    }
+    
+
+    
+    .mph1c:hover {
+      filter: hue-rotate(270deg);
+    }
+
+    .spabmc{
+      font-family: "Open Sans", sans-serif;
+      /* font-optical-sizing: auto; */
+      font-weight: 400;
+      width: 600px;
+      font-style: normal;
+     display: flex;
+     flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* font-variation-settings: "wdth" 70; */
+      color:rgb(90, 90, 90);
+      line-height: 1.6;
+      text-align: center;
+      font-size: 1.2vw;
+      padding: 20px;
+      transition-property: background, filter;
+     
+      z-index: 3; /* Highest z-index to ensure it is above everything else */
+      margin: 0; /* Remove default margins */
+    }

@@ -101,10 +101,19 @@ const ChatboxModal = ({ show, onClose, val: conversationId,ischatok }) => {
   return (
     <Modal open={show} onClose={onClose} size="lg">
       <Modal.Header>
-        <Modal.Title>Know Eswar Sudhan with No Eswar Sudhan</Modal.Title>
+        <Modal.Title>Proxy Assistant</Modal.Title>
       </Modal.Header>
       <Modal.Body style={{ display: "flex", flexDirection: "column", height: "70vh" }}>
-        <div className="chatcontainer">
+        {conversation.length === 0?
+        <div className="chatcontainerempty">
+          <div className="mph1c">
+          Hello, I am Proxy Assistant!
+          </div>
+          <div className="spabmc">
+          A chatbot designed to provide instant insights into Eswar Sudhan’s professional work and hobbies. Feel free to ask any questions related to them! For detailed queries, kindly contact him.
+          </div>
+        </div>:
+         <div className="chatcontainer">
           <div className="chat-container" ref={chatContainerRef}>
             {conversation.map((msg, index) => (
               <React.Fragment key={index}>
@@ -126,7 +135,7 @@ const ChatboxModal = ({ show, onClose, val: conversationId,ischatok }) => {
               </div>
             )}
           </div>
-        </div>
+        </div> }
       </Modal.Body>
       <Modal.Footer>
         { ischatok==='chatok'?

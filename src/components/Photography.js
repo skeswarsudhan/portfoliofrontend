@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './photography.css'; // Make sure to create this CSS file
-import imgurl from '../media/bg7pnre.png';
+import imgurl from '../media/bg8pnre.png';
 import axios from 'axios';
 
 function FadeInSection(props) {

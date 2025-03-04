@@ -78,6 +78,7 @@
     transition-property: background, filter;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   }
 
   .buttoninconApplied{
@@ -96,6 +97,7 @@
     transition-property: background, filter;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   }
 
   .buttoninconApply:hover{

@@ -195,24 +195,9 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const initializechat = async () => {
-      try {
-        const response = await axios.post('https://portfolioserver-3ksj.onrender.com/initialize', {});
   
-        if (response.status === 200) {
-          setChatbox('chatok');
-        } else {
-          setChatbox('Error occurred, kindly try another time');
-        }
-      } catch (error) {
-        setChatbox('Error occurred, kindly try another time');
-      }
-    };
-  
-    initializechat(); // Call the function
-  
-  }, []); // Empty dependency array to run it only once
+
+
 
   useEffect(() => {
     const initializechat = async () => {
@@ -232,6 +217,10 @@ function App() {
     initializechat(); // Call the function
   
   }, []); // Empty dependency array to run it only once
+
+
+
+
 
 
 
@@ -251,6 +240,10 @@ function App() {
   }, []); // Empty dependency array to run it only once
   
     
+
+
+
+
 
   const scrollToSection = (sectionRef) => {
     sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -275,6 +268,8 @@ function App() {
     );
   };
 
+
+  
   const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
@@ -295,7 +290,7 @@ function App() {
       <>
         <MainandSecondPage/>
         <div ref={projectsRef}>
-          <Projects projectData={projectData} />
+          <Projects projectData={projectData} photoData={photoData} />
         </div>
         <div ref={photographyRef}>
           <Photography photoData={photoData} />
