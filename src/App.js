@@ -178,6 +178,7 @@ import axios from 'axios';
 import projectData from './projects.json';
 import photoData from './photography.json';
 import MainandSecondPage from './pages/mainandsecondpage';
+import videoBg from './media/default.mp4'
 
 function App() {
   const [initialLoading, setInitialLoading] = useState(true); // Loading state
@@ -186,14 +187,14 @@ function App() {
   const projectsRef = useRef(null);
   const photographyRef = useRef(null);
 
-  useEffect(() => {
-    // Simulate loading effect
-    const timer = setTimeout(() => {
-      setInitialLoading(false);
-    }, 2000); // Reduced from 6s to 2s
+  // useEffect(() => {
+  //   // Simulate loading effect
+  //   const timer = setTimeout(() => {
+  //     setInitialLoading(false);
+  //   }, 2000); // Reduced from 6s to 2s
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   
 
@@ -280,6 +281,11 @@ function App() {
   return (
     <Router>
       <Layout>
+        {/* Background Video */}
+      <video autoPlay loop muted className="video-bg">
+        <source src={videoBg} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <Routes>
   {/* Add this redirect from root to /portfolio */}
   <Route path="/" element={<Navigate to="/portfolio" replace />} />

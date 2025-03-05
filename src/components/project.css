@@ -1,13 +1,13 @@
 .projectcon{
-  background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217));
+  /* background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217));
   background-image: url('../media/bgpage3up.jpg');
   background-size:cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
     
 }
 .projectcon2{
-  background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217));
+  background: linear-gradient(180deg,rgb(217, 217, 217),rgba(217, 217, 217, 0.493),rgb(217, 217, 217));
   z-index: 2;
 }
 
