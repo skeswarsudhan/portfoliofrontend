@@ -48,7 +48,7 @@ const ChatboxModal = ({ show, onClose, val: conversationId,ischatok }) => {
   const sendInitialMessage = async () => {
     if (conversation.length === 0) {
       try {
-        const response = await axios.post("https://portfolioserver-3ksj.onrender.com/ask", {
+        const response = await axios.post("https://portfolioserver-kwag.onrender.com/ask", {
           question: "Hello",
           conversation_id: conversationId,
           chat_history: [],
@@ -71,7 +71,7 @@ const ChatboxModal = ({ show, onClose, val: conversationId,ischatok }) => {
     setIsGenerating(true);
 
     try {
-      const response = await axios.post("https://portfolioserver-3ksj.onrender.com/ask", {
+      const response = await axios.post("https://portfolioserver-kwag.onrender.com/ask", {
         question: message,
         conversation_id: conversationId,
         chat_history: updatedConversation,

@@ -24,7 +24,7 @@
 //   useEffect(() => {
 //     const fetchPhotoData = async () => {
 //       try {
-//         const response = await fetch('https://portfolioservermain-vn6i.onrender.com/images');
+//         const response = await fetch('https://portfolioservermain-ycvy.onrender.com/images');
 //         if (!response.ok) {
 //           throw new Error(`HTTP error! status: ${response.status}`);
 //         }
@@ -40,7 +40,7 @@
 
 //     const fetchProjectData = async () => {
 //       try {
-//         const response = await fetch('https://portfolioservermain-vn6i.onrender.com/projects');
+//         const response = await fetch('https://portfolioservermain-ycvy.onrender.com/projects');
 //         if (!response.ok) {
 //           throw new Error(`HTTP error! status: ${response.status}`);
 //         }
@@ -203,7 +203,7 @@ function App() {
   useEffect(() => {
     const initializechat = async () => {
       try {
-        const response = await axios.post('https://portfolioserver-3ksj.onrender.com/initialize', {});
+        const response = await axios.post('https://portfolioserver-kwag.onrender.com/initialize', {});
   
         if (response.status === 200) {
           setChatbox('chatok');
@@ -228,7 +228,7 @@ function App() {
   useEffect(() => {
     const helloserver = async () => {
       try {
-        const response = await axios.get('https://portfolioservermain-vn6i.onrender.com/hello');
+        const response = await axios.get('https://portfolioservermain-ycvy.onrender.com/hello');
   
        
       } catch (error) {

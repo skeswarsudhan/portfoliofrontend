@@ -39,7 +39,7 @@ const FeedbackPage = () => {
     setFeedbackSubmitted('Sending...');
 
     try {
-      const response = await axios.post('https://portfolioservermain-vn6i.onrender.com/comments', {
+      const response = await axios.post('https://portfolioservermain-ycvy.onrender.com/comments', {
         name,
         email,
         comment: comments,

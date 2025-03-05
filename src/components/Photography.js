@@ -40,7 +40,7 @@ function FadeInSection(props) {
 
 
     // useEffect(() => {
-    //     fetch('https://portfolioservermain-vn6i.onrender.com/images')
+    //     fetch('https://portfolioservermain-ycvy.onrender.com/images')
     //         .then(response => {
     //             if (!response.ok) {
     //                 throw new Error('Server Error');
@@ -63,7 +63,7 @@ function FadeInSection(props) {
         useEffect(() => {
             const helloserver = async () => {
               try {
-                const response = await axios.get('https://portfolioservermain-vn6i.onrender.com/hello', {});
+                const response = await axios.get('https://portfolioservermain-ycvy.onrender.com/hello', {});
           
                
               } catch (error) {

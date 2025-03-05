@@ -50,8 +50,8 @@ const SecondPage = () => {
       <h2 className="spabm">
       <h3 className='sph3'>About Me</h3> 
       <FadeInSection>
-      Hey there! I'm Eswar, an AI engineer with a passion for building full-stack applications and creating meaningful digital experiences. And I also take photos. Welcome to my little corner on the web—happy to have you here!  Hey there! I'm Eswar, an AI engineer with a passion for building full-stack applications and creating meaningful digital experiences. And I also take photos. Welcome to my little corner on the web—happy to have you here!  Hey there! I'm Eswar, 
-      </FadeInSection>
+      Hello, welcome to my portfolio! I am an engineer with a B.Tech degree in AI. I enjoy designing and developing end-to-end applications, working on AI, and taking photos. You can explore my work on this page.
+       </FadeInSection>
       </h2>
       </div>
         <div style={{ display: 'flex' }}>
