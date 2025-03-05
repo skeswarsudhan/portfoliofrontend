@@ -1,6 +1,6 @@
 
 .feedbackcon{
-  background: linear-gradient(180deg,rgb(217, 217, 217),rgba(217, 217, 217, 0.651),rgb(217, 217, 217));
+  background: linear-gradient(180deg,rgb(217, 217, 217),rgba(217, 217, 217, 0.651));
   /* background-image: url('../media/bgupage4up.jpg');
   background-size:cover;
   background-repeat: no-repeat;
@@ -9,7 +9,7 @@
 }
 
 .feedbackcon2{
-  background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217,0),rgb(217, 217, 217));
+  /* background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217,0),rgb(217, 217, 217)); */
 
 }
 
