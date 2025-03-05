@@ -213,7 +213,7 @@ textarea {
       padding: 30px;
       margin-bottom: 1vh;
       background-color: #11121a00;
-      background: linear-gradient(130deg,  #59b7ff , #ff7676);
+      /* background: linear-gradient(130deg,  #59b7ff , #ff7676); */
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       text-align: center;
@@ -227,11 +227,41 @@ textarea {
       z-index: 300;
       margin: 0;
       opacity: 1;
-     
-      /* animation: reveal 2s ease-out forwards, fadeIn 2s ease-in forwards; */
+      
+      /* Immediate hue rotation on load */
+      /* animation: hueRotate 2s ease-in-out forwards; */
+      /* background: linear-gradient(45deg, #59b7ff, #ff7676, #59b7ff, #ff7676);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; */
+      background: linear-gradient(45deg, #59b7ff, #ff7676, #00ff87, #ff00c3);
+      background-size: 400% 400%;
+      animation: morphGradient 15s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes morphGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
     
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
+    @keyframes hueRotate {
+      from {
+        filter: hue-rotate(0deg);
+      }
+      to {
+        filter: hue-rotate(270deg);
+      }
+    }
     
     .mph1c:hover {
       filter: hue-rotate(270deg);
