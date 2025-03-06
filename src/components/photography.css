@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     /* background-color: rgb(217, 217, 217,0); */
-    background: linear-gradient(180deg,rgb(217, 217, 217),rgba(217, 217, 217, 0.66),rgba(217, 217, 217, 0.71),rgb(217, 217, 217),rgb(217, 217, 217));
+    background: linear-gradient(180deg,#d9d9d9e7,rgba(217, 217, 217, 0.66),rgba(217, 217, 217, 0.71),rgb(217, 217, 217),rgb(217, 217, 217));
     align-items: center;
     justify-content: center;
     /* background-image: url('../media/bgphoto2up.jpg'); 

@@ -132,8 +132,8 @@ textarea {
     padding-bottom: 150px;
     padding-left: 50px;
     padding-right: 50px;
-    scrollbar-width: none;  /* Firefox */
-    -ms-overflow-style: none;  /* IE/Edge */
+    /* scrollbar-width: none;  
+    -ms-overflow-style: none;   */
 }
 .chat-container::-webkit-scrollbar {
   display: none;
@@ -223,7 +223,7 @@ textarea {
       font-family: "Open Sans", sans-serif;
       font-weight: 500;
       font-style: normal;
-      font-size: 4vw;
+      font-size: 450%;
       z-index: 300;
       margin: 0;
       opacity: 1;
@@ -281,7 +281,7 @@ textarea {
       color:rgb(90, 90, 90);
       line-height: 1.6;
       text-align: center;
-      font-size: 1.2vw;
+      font-size: 120%;
       padding: 20px;
       transition-property: background, filter;
      

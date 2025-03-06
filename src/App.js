@@ -199,12 +199,19 @@ function App() {
   
 
 
-
   useEffect(() => {
-    const initializechat = async () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  
+    if (/android|iphone|ipad|ipod|blackberry|opera mini|iemobile|mobile/i.test(userAgent)) {
+      window.location.href = "https://portfoliofrontend-mauve.vercel.app/server-error"; // Change to your blocked page URL
+    }
+  }, []);
+
+  
+  useEffect(() => {
+    const initializeChat = async () => {
       try {
         const response = await axios.post('https://portfolioserver-kwag.onrender.com/initialize', {});
-  
         if (response.status === 200) {
           setChatbox('chatok');
         } else {
@@ -215,30 +222,27 @@ function App() {
       }
     };
   
-    initializechat(); // Call the function
-  
-  }, []); // Empty dependency array to run it only once
-
-
-
-
-
-
-
-  useEffect(() => {
-    const helloserver = async () => {
+    const helloServer = async () => {
       try {
-        const response = await axios.get('https://portfolioservermain-ycvy.onrender.com/hello');
-  
-       
+        await axios.get('https://portfolioservermain-ycvy.onrender.com/hello');
       } catch (error) {
-        
+        console.error('Error in helloServer API call', error);
       }
     };
   
-    helloserver(); // Call the function
+    // Call both APIs immediately on mount
+    initializeChat();
+    helloServer();
   
-  }, []); // Empty dependency array to run it only once
+    // Set an interval to call them every 10 minutes
+    const intervalId = setInterval(() => {
+      initializeChat();
+      helloServer();
+    }, 10 * 60 * 1000); // 10 minutes in milliseconds
+  
+    // Cleanup function to clear interval on component unmount
+    return () => clearInterval(intervalId);
+  }, []);
   
     
 
@@ -302,6 +306,7 @@ function App() {
           <Photography photoData={photoData} />
         </div>
         <FeedbackPage />
+        {/* <ContactPage/> */}
       </>
     }
   />

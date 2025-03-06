@@ -1,6 +1,7 @@
 
 .feedbackcon{
   background: linear-gradient(180deg,rgb(217, 217, 217),rgba(217, 217, 217, 0.651));
+  padding-bottom:'1vh';
   /* background-image: url('../media/bgupage4up.jpg');
   background-size:cover;
   background-repeat: no-repeat;
@@ -101,18 +102,19 @@
   /* ContactPage.css */
 
 .contact-page {
+  /* position: fixed; */
     
   /* margin: 0 auto; */
   /* padding: 10px; */
   background-color: rgb(217, 217, 217,0);
-  border-radius: 10px;
+  /* border-radius: 10px; */
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2vh;
-  margin-top: 4vh;
+  padding-top: 4vh;
 }
 
 .contact-item {

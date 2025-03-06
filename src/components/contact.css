@@ -1,12 +1,13 @@
-/* ContactPage.css */
+/* 
 
 .contact-page {
     
     margin: 0 auto;
     padding: 10px;
-    background-color: rgb(217, 217, 217,0);
+    background-color:rgba(217, 217, 217, 0);
+    background: linear-gradient(180deg,rgba(217, 217, 217, 0.651));
     border-radius: 10px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     display: flex;
     align-items: center;
@@ -24,14 +25,14 @@
   }
   
   .contact-icon {
-    color: #383838; /* Icon color */
-    margin-right: 15px; /* Space between icon and text */
+    color: #383838; 
+    margin-right: 15px; 
   }
   
   .contact-item a {
     text-decoration: none;
-    color: #3a3a3a; /* Link color */
-    /* font-weight: bold; */
+    color: #3a3a3a; 
+    font-weight: bold;
   }
   
   .contact-item a:hover {
@@ -43,4 +44,4 @@
     font-size: 32px;
     color: #333;
   }
-  
+   */
