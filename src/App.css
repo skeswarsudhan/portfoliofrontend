@@ -54,6 +54,16 @@ body{
   }
 }
 
+.mobile-message {
+  background-color: #d9d9d9e7;
+  display: block;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: hsl(0, 0%, 27%);
+}
+
+
 /* @media (max-width: 768px), (max-height: 500px) {
   body {
     display: none;
