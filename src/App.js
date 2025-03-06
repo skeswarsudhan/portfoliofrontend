@@ -199,15 +199,7 @@ function App() {
   
 
 
-  useEffect(() => {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  
-    if (/android|iphone|ipad|ipod|blackberry|opera mini|iemobile|mobile/i.test(userAgent)) {
-      window.location.href = "https://portfoliofrontend-mauve.vercel.app/server-error"; // Change to your blocked page URL
-    }
-  }, []);
 
-  
   useEffect(() => {
     const initializeChat = async () => {
       try {
@@ -246,7 +238,23 @@ function App() {
   
     
 
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (
+      /android|iphone|ipad|ipod|blackberry|opera mini|iemobile|mobile/i.test(
+        userAgent
+      )
+    ) {
+      setIsMobile(true);
+    }
+  }, []);
+
+  if (isMobile) {
+    return <div className="mobile-message">This website is not available on mobile devices.</div>;
+  }
 
 
 
