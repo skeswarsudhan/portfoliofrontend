@@ -40,11 +40,11 @@ const MainPage = () => {
     <div className="container">
       <div className="mp-maincon2">
         <div className="mp-maincon">
-        {/* <img 
+        <img 
           src={imgpf} 
           alt="Overlay"
           className="overlay-image"
-        /> */}
+        />
         <div className="mp-text-container left">
           <h2 className="mph2">{greetings}, this is</h2>
           <h1 className="mph1">{name}</h1>

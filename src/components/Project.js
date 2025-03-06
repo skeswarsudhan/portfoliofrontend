@@ -15,6 +15,45 @@ import imgurl from '../media/bg7pnre.png';
 const categories = ["Image processing", "Data science", "Data Analysis", "Web Development"];
 const tools = ["Python", "Reactjs", "Matlab"];
 
+function FadeInSection(props) {
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio >= 0.3) {
+            setVisible(true);
+            observer.disconnect(); // Stop observing once visible
+          }
+        });
+      },
+      { threshold: 0.3 } // Trigger when 30% of the element is visible
+    );
+
+    if (domRef.current) {
+      observer.observe(domRef.current);
+    }
+
+    return () => {
+      if (observer && domRef.current) {
+        observer.unobserve(domRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+      ref={domRef}
+    >
+      {props.children}
+    </div>
+  );
+}
+
+
 const Projects = ({ projectData }) => {
   const [projects, setProjects] = useState(projectData || []);
 
@@ -112,10 +151,27 @@ const Projects = ({ projectData }) => {
     return `${year}-${month}`;
   };
 
+  const projectstag=["//projects", "#projects","/*projects*/","(projects)","[projects]","{projects}","'projects'"]
+  const [currentTag, setCurrentTag] = useState(projectstag[0]);
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      index = (index + 1) % projectstag.length;
+      setCurrentTag(projectstag[index]);
+    }, 500);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+
+  
+
+
   return (
     <div className="projectcon">
       <div className="projectcon2">
-      <div className="projecttitlecard">Take a look into my project  </div>
+      <div className="projecttitlecard">Take a look into my <span className="projecttag">{currentTag}</span></div>
 
       {sortandfilter ? (
         <div className="controls">
@@ -174,11 +230,13 @@ const Projects = ({ projectData }) => {
           </button>
         </div>
       )}
-
+      
       <div className="projects-container">
+       
         {filteredProjects.map((project) => (
           <div key={project._id} className="project-card">
             <div key={project._id} className={`${getCategoryClass(project.category)}`}>{project.category}</div>
+            <FadeInSection>
             <h3>{project.title}</h3>
             <h5>{project.description}</h5>
             <a href={project.link ? project.link : ""}><LinkIcon /></a>
@@ -190,8 +248,10 @@ const Projects = ({ projectData }) => {
               <BuildOutlinedIcon style={{ marginRight: '5px' }} />
               {project.tools_used.join(', ')}
             </h5>
+            </FadeInSection>
           </div>
         ))}
+        
       </div>
     </div>
     </div>

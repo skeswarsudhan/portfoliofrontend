@@ -26,13 +26,17 @@
   overflow: hidden; /* Ensures child elements don't overflow */
 }
 
+
+
+
+
 .mp-maincon {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../media/pfup3.png');
+  /* background-image: url('../media/pfup2.png'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -20px center; /* Start slightly left */
@@ -74,9 +78,9 @@
   top: 50%;
   left: 75%;
   transform: translate(-50%, -50%) scale(0.8); /* Start at 80% size */
-  width: 45%;
+  width: 125vh;
   height: auto;
-  opacity: 0.8; /* Adjust overlay visibility */
+  opacity: 1; /* Adjust overlay visibility */
   /* animation: scaleUp 1.5s ease-out forwards; */
 }
 

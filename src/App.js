@@ -197,7 +197,7 @@ function App() {
   // }, []);
 
   
-
+  
 
 
   useEffect(() => {
@@ -236,25 +236,39 @@ function App() {
     return () => clearInterval(intervalId);
   }, []);
   
-    
-
-  const [isMobile, setIsMobile] = useState(false);
+  const [isRestricted, setIsRestricted] = useState(false);
 
   useEffect(() => {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const checkRestrictions = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const isMobileDevice = /android|iphone|ipad|ipod|blackberry|opera mini|iemobile|mobile/i.test(userAgent);
+      const isSmallScreen = window.innerWidth <= 768 || window.innerHeight <= 500;
 
-    if (
-      /android|iphone|ipad|ipod|blackberry|opera mini|iemobile|mobile/i.test(
-        userAgent
-      )
-    ) {
-      setIsMobile(true);
-    }
+      if (isMobileDevice || isSmallScreen) {
+        setIsRestricted(true);
+      } else {
+        setIsRestricted(false);
+      }
+    };
+
+    checkRestrictions();
+    window.addEventListener('resize', checkRestrictions);
+    
+    return () => window.removeEventListener('resize', checkRestrictions);
   }, []);
 
-  if (isMobile) {
-    return <div className="mobile-message">This website is not available on mobile devices.</div>;
+  if (isRestricted) {
+    return (
+      <div className="mobile-message">
+        <video autoPlay loop muted className="video-bg">
+        <source src={videoBg} type="video/mp4" />
+        {/* Your browser does not support the video tag. */}
+      </video>
+        This website is not available on mobile devices or small screens. Kindly use a desktop for the best experience. A responsive version is coming soon!
+      </div>
+    );
   }
+
 
 
 
@@ -296,7 +310,7 @@ function App() {
         {/* Background Video */}
       <video autoPlay loop muted className="video-bg">
         <source src={videoBg} type="video/mp4" />
-        Your browser does not support the video tag.
+        {/* Your browser does not support the video tag. */}
       </video>
       <Routes>
   {/* Add this redirect from root to /portfolio */}

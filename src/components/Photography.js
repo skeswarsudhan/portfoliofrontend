@@ -5,37 +5,41 @@ import imgurl from '../media/bg8pnre.png';
 import axios from 'axios';
 
 function FadeInSection(props) {
-    const [isVisible, setVisible] = useState(false); // Initial visibility set to false
-    const domRef = useRef();
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setVisible(true);
-                }
-            });
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio >= 0.3) {
+            setVisible(true);
+            observer.disconnect(); // Stop observing once visible
+          }
         });
-
-        if (domRef.current) {
-            observer.observe(domRef.current);
-        }
-
-        return () => {
-            if (observer && domRef.current) {
-                observer.unobserve(domRef.current);
-            }
-        };
-    }, []);
-
-    return (
-        <div
-            className={`fade-in-section-ph ${isVisible ? 'is-visible' : ''}`}
-            ref={domRef}
-        >
-            {props.children}
-        </div>
+      },
+      { threshold: 0.3 } // Trigger when 30% of the element is visible
     );
+
+    if (domRef.current) {
+      observer.observe(domRef.current);
+    }
+
+    return () => {
+      if (observer && domRef.current) {
+        observer.unobserve(domRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      className={`fade-in-section-ph ${isVisible ? "is-visible" : ""}`}
+      ref={domRef}
+    >
+      {props.children}
+    </div>
+  );
 }
 
 

@@ -162,7 +162,7 @@
     opacity: 1;
     transform: translateY(25vh);
     visibility: hidden;
-    transition: opacity 0.6s ease-out, transform 1.5s ease-out;
+    transition: opacity 0.6s ease-out, transform 3.5s ease-out;
     will-change: opacity, visibility;
   }
   

@@ -34,7 +34,7 @@ function FadeInSection(props) {
 
   return (
     <div
-      className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+      className={`focus-text-section ${isVisible ? "is-visible" : ""}`}
       ref={domRef}
     >
       {props.children}
