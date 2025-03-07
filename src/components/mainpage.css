@@ -175,13 +175,17 @@
   background: linear-gradient(200deg, #b6b6b6, #11121a,  #989898);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-top:2vh;
   padding-bottom: 2vh;
   font-size: 4vw;
   font-weight: 400;
   transition-property: background, filter;
- 
-  z-index: 3; /* Highest z-index to ensure it is above everything else */
+  -webkit-box-decoration-break: clone;
+  z-index: 10; /* Highest z-index to ensure it is above everything else */
   margin: 0; /* Remove default margins */
+  display: inline-block; /* Prevents unnecessary clipping */
+  overflow: visible; /* Ensures text is not clipped */
+  white-space: nowrap; /* Prevents text wrapping */
 }
 
 img {
