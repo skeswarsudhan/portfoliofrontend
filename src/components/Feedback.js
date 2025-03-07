@@ -208,7 +208,7 @@ const FeedbackPage = () => {
           </div>
         </div>
       ) : (
-        <div className='projecttitlecard'>
+        <div className='projecttitlecardfp'>
           {/* Show "Thank you" message */}
           <div>Thank you, {isFeedbackSubmit}, for your feedback!</div>
 

@@ -148,4 +148,17 @@ h1 {
   color: #333;
 }
 
+.projecttitlecardfp{
+  font-family: "Open Sans", sans-serif;
+  background-color: rgb(217, 217, 217,0);
+ padding-top: 60px;
+ padding-bottom: 30px;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 4vw;
+  text-align: center;
+  
+  
+}
+
   
