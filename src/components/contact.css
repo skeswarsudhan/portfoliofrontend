@@ -107,8 +107,19 @@
 
 /* Mobile screens */
 @media screen and (max-width: 767px) {
+
+  .contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 100vh; */
+    padding: 20 0 0 0;
+    background-color: rgba(217, 217, 217, 0.651);
+    font-family: "Open Sans", sans-serif;
+  }
+
   .contact-card {
-    padding: 25px 15px;
+    padding: 0px 0px;
   }
   
   .contact-grid {
@@ -117,12 +128,12 @@
   }
   
   .contact-item {
-    padding: 12px;
+    padding: 7px;
   }
   
   .icon-container {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
   
   .contact-icon {
