@@ -328,7 +328,7 @@ function App() {
           <Photography photoData={photoData} isSmallScreen = { isRestricted } />
         </div>
         <FeedbackPage isSmallScreen = { isRestricted }/>
-        {/* <ContactPage/> */}
+        <ContactPage/>
       </>
     }
   />

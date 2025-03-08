@@ -117,7 +117,7 @@
   }
   
   .image-item {
-    width: clamp(350px, 35vw, 90vw); /* Ensures it's not too small or too large */
+    width: clamp(350px, 35vw, 95vw); /* Ensures it's not too small or too large */
     max-width: 90vw; /* Allows larger images on mobile */
     height: auto; /* Maintain aspect ratio */
     border-radius: 30px;
@@ -176,14 +176,22 @@
   .text-container1{
     display:block;
     font-family: "Open Sans", sans-serif;
-      background-color: rgb(217, 217, 217,0);
-     padding-top: 60px;
-     padding-bottom: 30px;
-      font-weight: 800;
-      font-style: normal;
-      font-size: 8vw;
-      text-align: center;
+    background-color: rgb(217, 217, 217,0);
+   padding-top: 0px;
+   padding-bottom: 30px;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 6vw;
+    text-align: center;
+    display: flex;
+    /* margin-left: 22%; */
    
+  }
+
+  .image-wrapper {
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle; /* Align images vertically */
   }
   
   .toph1 {
@@ -201,7 +209,7 @@
   }
   
   .image-item {
-   
+    /* width: 400px; */
     border-radius: 0;
    
   }
@@ -219,7 +227,7 @@
   }
   
   .toph1 {
-    font-size: 8vw;
+    font-size: 5vw;
   }
   
   .both1 {

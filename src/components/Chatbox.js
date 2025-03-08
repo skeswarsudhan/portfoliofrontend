@@ -137,9 +137,9 @@ const ChatboxModal = ({ show, onClose, val: conversationId,ischatok }) => {
           </div>
         </div> }
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer className="modalfooter">
         { ischatok==='chatok'?
-        <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", width: "90%" }}>
           <Inputcon onSendMessage={addUserMessage} onClearChatHistory={clearChatHistory} showbutton={isGenerating} />
         </div>: ischatok}
       </Modal.Footer>

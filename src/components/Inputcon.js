@@ -27,35 +27,31 @@ const Inputcon = ({ onSendMessage, onClearChatHistory, showbutton }) => {
   };
 
   return (
-    <div className="input-group mt-3">
-      <textarea
-        style={{
-          width: '100%',
-          border: '1px solid rgb(213, 213, 213)',
-          padding: '10px',
-          borderRadius: '5px'
-        }}
-        rows={2}
-        placeholder="Ask your questions..."
-        value={userInput}
-        onChange={handleInputChange}
-        onKeyPress={handleKeyPress}
-      />
-      {!showbutton && userInput.length > 0 && (
-        <Button
-          style={{ marginLeft: '10px', color: 'rgb(50,50,100)' }}
-          size="large"
-          shape="circle"
-          icon={<SendOutlined />}
-          onClick={handleSend}
-        />
-      )}
 
-      <button className='buttoninconch' onClick={onClearChatHistory}>
-        Clear
-      </button>
-    </div>
-  );
-};
+    <div className="input-group mt-3">
+  <textarea
+    className="chat-textarea"
+    rows={2}
+    placeholder="Ask your questions..."
+    value={userInput}
+    onChange={handleInputChange}
+    onKeyPress={handleKeyPress}
+  />
+  {!showbutton && userInput.length > 0 && (
+    <Button
+      className="send-button"
+      size="large"
+      shape="circle"
+      icon={<SendOutlined />}
+      onClick={handleSend}
+    />
+  )}
+
+  <button className='buttoninconch' onClick={onClearChatHistory}>
+    Clear
+  </button>
+</div>
+
+)}
 
 export default Inputcon;

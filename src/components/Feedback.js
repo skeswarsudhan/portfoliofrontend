@@ -13,7 +13,7 @@ const FeedbackPage = () => {
   const [email, setEmail] = useState('');
   const [comments, setComments] = useState('');
   const [message, setMessage] = useState('');
-  const [feedbackSubmitted, setFeedbackSubmitted] = useState('Submit');
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState('Send');
   const [showMailIcons, setShowMailIcons] = useState(false);
   const [showForm, setShowForm] = useState(true);
  
@@ -76,12 +76,6 @@ const FeedbackPage = () => {
     };
   };
 
-  const contactDetails = {
-    github: 'https://github.com/skeswarsudhan',
-    email: 'skeswarsudhan@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/skeswarsudhan/',
-    location: 'Trichy, Tamil Nadu',
-  };
 
   
 
@@ -135,7 +129,7 @@ const FeedbackPage = () => {
       
     {showForm ? (
       <div  style={{width:'100%'}}>
-        <div className='projecttitlecard'>Let me know what you think!</div>
+        <div className='projecttitlecardfpi'>Let me know what you think!</div>
 
         <div className='form-container'>
           <div className='feedback-form'>
@@ -160,7 +154,7 @@ const FeedbackPage = () => {
                 placeholder='Comments'
                 value={comments}
                 onChange={(e) => setComments(e.target.value)}
-                rows='4'
+                rows='3'
                 required
                 className='form-textarea'
               />
@@ -169,7 +163,7 @@ const FeedbackPage = () => {
                 type='submit'
                 disabled={feedbackSubmitted === 'Sending...'}
               >
-                {feedbackSubmitted}
+                {feedbackSubmitted} <EmailIcon/>
               </button>
             </form>
           </div>
@@ -203,33 +197,7 @@ const FeedbackPage = () => {
     )}
  
 
-      {/* <div className='contact-page'>
-        <div style={{ display: 'flex', flexDirection: 'column', padding: '30px' }}>
-          <div className='contact-item'>
-            <GitHubIcon className='contact-icon' />
-            <a href={contactDetails.github} target='_blank' rel='noopener noreferrer'>
-              {contactDetails.github}
-            </a>
-          </div>
-          <div className='contact-item'>
-            <EmailIcon className='contact-icon' />
-            <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
-          </div>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', padding: '50px' }}>
-          <div className='contact-item'>
-            <LinkedInIcon className='contact-icon' />
-            <a href={contactDetails.linkedin} target='_blank' rel='noopener noreferrer'>
-              {contactDetails.linkedin}
-            </a>
-          </div>
-          <div className='contact-item'>
-            <LocationOnIcon className='contact-icon' />
-            <span> {contactDetails.location}</span>
-          </div>
-        </div>
-      </div> */}
-      {/* </div> */}
+      
     </div>
   );
 };

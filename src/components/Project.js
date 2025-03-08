@@ -186,7 +186,8 @@ const Projects = ({ projectData }) => {
                 ]}
                 value={sortBy}
                 onChange={setSortBy}
-                style={{ width: 224, marginBottom: 10 }}
+                // style={{ width: 224, marginBottom: 10 }}
+                className='selectpicker'
               />
               <h5 style={{ marginBottom: '10px' }}>in</h5>
               <SelectPicker
@@ -196,7 +197,7 @@ const Projects = ({ projectData }) => {
                 ]}
                 value={sortOrder}
                 onChange={setSortOrder}
-                style={{ width: 224, marginBottom: 10 }}
+                className='selectpicker'
               />
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
