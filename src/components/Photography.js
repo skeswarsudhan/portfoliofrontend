@@ -92,6 +92,9 @@ function FadeInSection(props) {
                         <h1 className="both1"></h1>
                     </div>
                 </div>
+                <div className='text-container1'>
+                  Photography
+                </div>
                 <div className="images-container">
                     <div className="images-slide">
                         {images.map((image, index) => (

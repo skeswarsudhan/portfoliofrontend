@@ -1,141 +1,207 @@
-
-.feedbackcon{
-  background: linear-gradient(180deg,rgb(217, 217, 217),rgba(217, 217, 217, 0.651));
-  padding-bottom:'1vh';
-  /* background-image: url('../media/bgupage4up.jpg');
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center; */
-  
+/* Base styles */
+:root {
+  --primary-gradient: linear-gradient(130deg, #0091ff, #061928, #061928, #ff6161);
+  --shadow-standard: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  --border-radius: 5px;
+  --padding-standard: 1rem;
+  --transition-standard: all 1s ease-in-out;
 }
 
-.feedbackcon2{
-  /* background: linear-gradient(180deg,rgb(217, 217, 217),rgb(217, 217, 217,0),rgb(217, 217, 217,0),rgb(217, 217, 217)); */
-
+/* Container Styles */
+.feedbackcon {
+  background: linear-gradient(180deg, rgb(217, 217, 217), rgba(217, 217, 217, 0.651));
+  padding-bottom: 1vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.buttonincon{
-    width:100%;
-    padding:10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background: linear-gradient(130deg, #0091ff,#061928,#061928, #ff6161);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    border-radius: 10px;
-    font-weight: 300;
-    gap:5px;
-    transition-property: background, filter;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-out;
-  }
-
-  .buttonincon:hover{
-    filter: hue-rotate(270deg);
-    
-  }
-
-  .buttoninconnew{
-    width:'fit-content';
-    padding:10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background: linear-gradient(130deg, #0091ff,#061928,#061928, #ff6161);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    border-radius: 10px;
-    font-weight: 300;
-    gap:5px;
-    transition-property: background, filter;
-  transition-duration: 1s;
-  transition-timing-function: ease-in-out;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
-  }
-
-  .buttoninconnew:hover{
-    filter: hue-rotate(270deg);
-    
-  }
-
-
-  input:focus{
-    outline: 4px solid white;
-  }
-
-  textarea:focus{
-    outline: 4px solid white;
-  }
-
-  @keyframes scaleUpDown {
-    0% {
-      transform: scale(1); /* Start at full size */
-      opacity: 1;
-    }
-    50% {
-      transform: scale(0.2); /* Scale down to 50% */
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1); /* Scale back to full size */
-      opacity: 1;
-    }
-  }
-
- 
-
-  
-  .animated-mail {
-    position: absolute;
-    animation: scaleUpDown 3s infinite; /* Animation duration set to 3 seconds and loops infinitely */
-    width: 100px;
-    height: 100px;
-    /* box-shadow: 0px 0px 10px rgb(0,0,0,0.5); */
-    filter: brightness(110%);
-  }
-
-
-  /* ContactPage.css */
-
-.contact-page {
-  /* position: fixed; */
-    
-  /* margin: 0 auto; */
-  /* padding: 10px; */
-  background-color: rgb(217, 217, 217,0);
-  /* border-radius: 10px; */
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  text-align: center;
+/* Button Styles */
+.buttonincon {
+  width: 100%;
+  font-size: clamp(14px, 1.2vw, 30px);
+  padding: clamp(0.5rem, 0.5vw, 1.25rem) clamp(1rem, 2vw, 2rem);
+  background: var(--primary-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2vh;
-  padding-top: 4vh;
+  color: #ffffff;
+  border-radius: var(--border-radius);
+  font-weight: 300;
+  gap: 5px;
+  transition: var(--transition-standard);
+  margin: 0 auto;
+}
+
+.buttoninconnew {
+  width: 30%;
+  font-size: clamp(14px, 1.2vw, 30px);
+  padding: clamp(0.5rem, 1vh, 1.25rem) clamp(1rem, 2vw, 2rem);
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border-radius: var(--border-radius);
+  font-weight: 300;
+  gap: 5px;
+  transition: var(--transition-standard);
+  margin: 0 auto;
+  margin-top: clamp(1.5vh, 3vh, 3vh); /* More responsive margin */
+  flex-direction: column;
+  box-shadow: var(--shadow-standard);
+}
+
+.buttonincon:hover, .buttoninconnew:hover {
+  filter: hue-rotate(270deg);
+}
+
+/* Form Focus States */
+input:focus, textarea:focus {
+  outline: 4px solid white;
+}
+
+/* Animation */
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Form Container Styles */
+.form-container {
+  height: auto;
+  min-height: 40vh;
+  padding: 1vh 0;
+  width: 100%;
+}
+
+.feedback-form {
+  width: 90%;
+  max-width: min(700px, 90vw);
+  margin: clamp(2rem, 5vh, 4rem) auto;
+  padding: 1.5vw;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(240, 240, 240);
+  font-weight: 400;
+}
+
+/* Form Elements */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 0.80vw, 1.5rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.form-input, .form-textarea {
+  padding: clamp(0.5rem, 0.5vw, 1rem);
+  font-size: clamp(14px, 1vw, 30px);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  width: 100%;
+}
+
+.form-textarea {
+  max-width: 100%;
+  min-height: 100px;
+  resize: none;
+  overflow: auto;
+}
+
+/* Buttons */
+.submit-button, .new-feedback-button {
+  padding: clamp(0.5rem, 1.5vw, 1rem);
+  font-size: clamp(14px, 1.2vw, 18px);
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.submit-button.sending {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(1rem, 3vw, 2rem);
+}
+
+/* Mail Icons */
+.mail-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: clamp(1rem, 3vw, 2rem);
+  margin-bottom: clamp(1rem, 3vh, 2rem); /* Added responsive bottom margin */
+  position: relative;
+  height: clamp(80px, 10vw, 120px);
+}
+
+.animated-mail {
+  position: absolute;
+  animation: scaleUpDown 3s infinite;
+  width: clamp(60px, 8vw, 120px);
+  height: clamp(60px, 8vw, 120px);
+  filter: brightness(110%);
+}
+
+/* Contact Page */
+.contact-page {
+  background-color: rgba(217, 217, 217, 0);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2vh, 4vw, 6vh) clamp(1rem, 3vw, 3rem);
+  width: 100%;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  margin: 10px 0;
-  font-size: 2vh;
+  margin: clamp(0.5rem, 1vw, 1rem) 0;
+  font-size: clamp(14px, 1.5vw, 20px);
   font-family: "Open Sans", sans-serif;
-font-optical-sizing: auto;
-font-weight: 300;
+  font-weight: 300;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contact-icon {
-  color: #383838; /* Icon color */
-  margin-right: 15px; /* Space between icon and text */
+  color: #383838;
+  margin-right: clamp(0.5rem, 1vw, 1rem);
 }
 
 .contact-item a {
   text-decoration: none;
-  color: #3a3a3a; /* Link color */
-  /* font-weight: bold; */
+  color: #3a3a3a;
+  word-break: break-word;
 }
 
 .contact-item a:hover {
@@ -143,22 +209,94 @@ font-weight: 300;
 }
 
 h1 {
-  /* margin-bottom: 30px; */
-  font-size: 32px;
+  font-size: clamp(24px, 4vw, 48px);
   color: #333;
+  margin-bottom: clamp(1rem, 3vh, 2.5rem);
 }
 
-.projecttitlecardfp{
+
+
+.projecttitlecardfp {
   font-family: "Open Sans", sans-serif;
-  background-color: rgb(217, 217, 217,0);
- padding-top: 60px;
- padding-bottom: 30px;
+  background-color: rgba(217, 217, 217, 0);
+  padding: clamp(2rem, 10vh, 4rem) 0;
   font-weight: 800;
   font-style: normal;
-  font-size: 4vw;
+  font-size: clamp(2rem, 3vw, 5rem);
   text-align: center;
-  
-  
+  width: 100%; /* Changed from 95% to 100% */
+  margin: 0 auto; /* Added auto margin for centering */
 }
 
+/* Media Queries */
+/* Small screens (mobile devices) */
+@media screen and (max-width: 600px) {
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
   
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-container {
+    width: auto;
+    padding: 1vh;
+  }
+  
+  .feedback-form {
+    padding: 1rem;
+  }
+  
+  .buttoninconnew {
+    width: 60%; /* Wider button on mobile */
+  }
+}
+
+/* Medium screens (tablets) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .feedback-form {
+    width: 85%;
+  }
+}
+
+/* Large screens (desktops) */
+@media screen and (min-width: 1025px) and (max-width: 2560px) {
+  .feedback-form {
+    width: 70%;
+  }
+}
+
+/* 4K screens */
+@media screen and (min-width: 2561px) {
+  :root {
+    --border-radius: 20px;
+  }
+  
+  .feedback-form {
+    max-width: 1200px;
+    padding: 3rem;
+  }
+  
+  .form-input, .form-textarea {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .submit-button, .new-feedback-button {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    max-width: 400px;
+  }
+  
+  .contact-item {
+    font-size: 1.8rem;
+  }
+  
+  .animated-mail {
+    width: 180px;
+    height: 180px;
+  }
+}

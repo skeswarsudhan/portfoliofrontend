@@ -69,7 +69,7 @@
     left: 50%;
     transform: translateX(-50%); /* Center it horizontally */
     color: rgb(57, 57, 57); /* Ensure the text is visible against the background */
-    font-size: 5vw;
+    font-size: 9vh;
     margin-top: 14%;
     z-index: 1;
     
@@ -95,54 +95,33 @@
   }
   
   .images-container {
-    overflow: hidden;
-    overflow-x: scroll;
+    width: 100%; /* Ensure container takes full width of parent */
+    overflow-x: auto; /* Allow horizontal scrolling */
     padding: 60px 0;
     background: white;
-    white-space: nowrap;
+    white-space: nowrap; /* Keep items in a single line */
     position: relative;
     background-color: rgb(217, 217, 217,0);
-  }
-  
-  .images-container:before,
-  .images-container:after {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-  }
-  
-  .images-container:before {
-    left: 10;
-    /* background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(220, 220, 220)); */
-  }
-  
-  .images-container:after {
-    right: 0;
-    /* background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(220, 220, 220)); */
-  }
-  
-  .images-container:hover .images-slide {
-    animation-play-state: paused;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
   }
   
   .images-slide {
     display: inline-block;
-    /* animation: 25s slide infinite linear; */
+    /* You can keep or remove the animation based on preference */
   }
   
   .image-wrapper {
     display: inline-block;
     margin: 0 15px;
+    vertical-align: middle; /* Align images vertically */
   }
   
   .image-item {
-    height: 400px; /* Set a maximum height for the images */
+    width: clamp(350px, 35vw, 90vw); /* Ensures it's not too small or too large */
+    max-width: 90vw; /* Allows larger images on mobile */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 30px;
     object-fit: contain;
-    /* margin:20px; */
   }
   
   .images-container::-webkit-scrollbar {
@@ -177,4 +156,79 @@
       opacity: 1; /* Fade in to visible */
     }
   }
+
+  .text-container1{
+    display:none;
+   
+  }
+
+  /* Add this media query at the end of your existing CSS */
+@media screen and (max-width: 1000px) {
+  .parentcon {
+    padding-top: 10vh;
+    padding-bottom: 3vh;
+  }
+  
+  .photography-container {
+  display:none;
+  }
+
+  .text-container1{
+    display:block;
+    font-family: "Open Sans", sans-serif;
+      background-color: rgb(217, 217, 217,0);
+     padding-top: 60px;
+     padding-bottom: 30px;
+      font-weight: 800;
+      font-style: normal;
+      font-size: 8vw;
+      text-align: center;
+   
+  }
+  
+  .toph1 {
+    font-size: 7vw; /* Increase font size relatively for better visibility */
+    margin-top: 10%; /* Adjust for smaller container */
+  }
+  
+  .both1 {
+    font-size: 7vw; /* Increase font size relatively */
+    bottom: 15%; /* Position closer to bottom */
+  }
+  
+  .images-container {
+    padding: 30px 0; /* Reduce padding */
+  }
+  
+  .image-item {
+   
+    border-radius: 0;
+   
+  }
+  
+  /* Ensure the fade-in animations work well on mobile */
+  .fade-in-section-ph {
+    transform: translateY(15vh); /* Smaller translation distance */
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .photography-container {
+    display: none;
+  }
+  
+  .toph1 {
+    font-size: 8vw;
+  }
+  
+  .both1 {
+    font-size: 8vw;
+    bottom: 10%;
+  }
+  
+  .image-item {
+    height: 200px;
+  }
+}
   

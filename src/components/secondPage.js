@@ -54,7 +54,7 @@ const SecondPage = () => {
        </FadeInSection>
       </h2>
       </div>
-        <div style={{ display: 'flex' }}>
+        <div className='sp-big-container1'>
           <div className="spcontainer1">
             {/* <h3 className="sph3">About me:</h3> */}
             <h2 className="sph2">
@@ -69,7 +69,7 @@ const SecondPage = () => {
 
           <div className="spcontainer2">
   <h2 className="sph2">
-    <h3 className="sph3">Experience:</h3>
+    <h3 className="sph3" style={{paddingBottom:'0.5vw'}}>Experience:</h3>
     <FadeInSection>
     <div className="experience-item">
       

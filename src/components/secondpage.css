@@ -1,306 +1,411 @@
 .sp-big-container {
-    display: flex; /* Use flexbox to arrange items horizontally */
-    flex-direction: column;
-    justify-content: space-between; /* Optional: Adjust spacing between items */
-    padding: 10px; /* Optional: Add padding around the big container */
-    background-color: rgba(217, 217, 217, 0);
-    background: linear-gradient(180deg,rgb(217, 217, 217));
-    /* background-image: url('../media/bgpage2.jpg'); 
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center;  */
-    
-   
-   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgba(217, 217, 217, 0);
+  background: linear-gradient(180deg, rgb(217, 217, 217));
+  /* background-image: url('../media/bgpage2.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;  */
+}
+.sp-big-container1{
+  display: flex;
+}
+/* Inner containers */
+.spcontainer1 {
+  flex: 1;
+  margin: 10px;
+  padding: 30px;
+  margin-left: 10%;
+  border: 1px solid #00000000;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.spcontainer2 {
+  flex: 2.5;
+  margin: 10px;
+  margin-right: 10%;
+  padding: 30px;
+  border: 1px solid #00000000;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.spcontainer3 {
+  flex: 2.5;
+  margin: 10px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 30px;
+  border: 1px solid #00000000;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.sph2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  align-items: center;
+  justify-content: center;
+  color: #1f1f1f;
+  line-height: 1.6;
+  font-size: clamp(14px, 1.1vw, 35px);
+  padding: clamp(16px, 1.2vw, 24px);
+  transition-property: background, filter;
+  z-index: 3;
+  margin: 0;
+}
+
+.spabm {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(90, 90, 90);
+  line-height: 1.6;
+  font-size: clamp(14px, 1.1vw, 35px);
+  padding: clamp(16px, 1.2vw, 24px);
+  transition-property: background, filter;
+  z-index: 3;
+  margin: 0;
+}
+
+.experience-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(8px, 0.5vw, 16px);
+  margin-bottom: clamp(16px, 1vw, 32px);
+}
+
+.company-logo {
+  width: clamp(24px, 2vw, 48px);
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+  margin-right: clamp(10px, 0.8vw, 20px);
+}
+
+.company-logo:hover {
+  transform: scale(1.1);
+}
+
+.job-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.job-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  flex: 1;
+}
+
+.job-date {
+  text-align: right;
+  color: rgb(90, 90, 90);
+}
+
+.job-description {
+  font-size: clamp(14px, 1.1vw, 35px);
+  color: #555;
+  margin-left: clamp(20px, 2vw, 60px);
+}
+
+.sph3 {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 450;
+  font-style: normal;
+  align-items: center;
+  justify-content: center;
+  font-variation-settings: "wdth" 70;
+  background: linear-gradient(#212541, #212541);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: clamp(18px, 1.5vw, 36px);
+  transition-property: background, filter;
+  z-index: 3;
+  margin: 0;
+}
+
+.sph1 {
+  background: linear-gradient(200deg, #ff6cdf, #58227c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: clamp(24px, 2vw, 48px);
+  transition-property: background, filter;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  z-index: 3;
+  margin: 0;
+  opacity: 0;
+}
+
+.sph1.ip {
+  background: linear-gradient(200deg, #ff6c6c, #2e227c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 2vw;
+  transition-property: background, filter;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  z-index: 3;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.sph1.ds {
+  background: linear-gradient(200deg, #6cff9b, #22267c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 2vw;
+  transition-property: background, filter;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  z-index: 3;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.sph1.da {
+  background: linear-gradient(200deg, #ff6cdf, #520d0d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 2vw;
+  transition-property: background, filter;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  z-index: 3;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.sph1.wd {
+  background: linear-gradient(200deg, #ff6cdf, #58227c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 2vw;
+  transition-property: background, filter;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+  z-index: 3;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+.sph1.fade-in {
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.sph1:hover {
+  filter: hue-rotate(270deg);
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(7vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.focus-text-section {
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, filter 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  will-change: opacity, filter;
+  visibility: hidden;
+}
+
+.focus-text-section.is-visible {
+  animation: focusTextEffect 2s forwards;
+  visibility: visible;
+}
+
+@keyframes focusTextEffect {
+  0% {
+      opacity: 0;
+      filter: blur(8px);
+  }
+  20% {
+      opacity: 0.7;
+      filter: blur(0px);
+  }
+  45% {
+      opacity: 0.85;
+      filter: blur(1px);
+  }
+  60% {
+      opacity: 0.9;
+      filter: blur(2px);
+  }
+  75% {
+      opacity: 0.95;
+      filter: blur(1px);
+  }
+  100% {
+      opacity: 1;
+      filter: blur(0px);
+  }
+}
+
+/* Media queries for responsive design */
+@media screen and (max-width: 1000px) {
+  .sp-big-container {
+    padding: 5px;
+    box-sizing: border-box;
+    align-items: center;
+    /* Already using flex-direction: column from the main CSS */
+}
+.sp-big-container1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spcontainer1, .spcontainer2, .spcontainer3 {
+    margin: 10px 5%;
+    padding: 15px;
+    border-radius: 15px;
+    flex: 0 0 auto; /* Change from flex: 1 to ensure they don't try to share space */
+    width: 90%; /* Set a width to ensure they take up most of the container width */
+    max-width: none; /* Remove any max-width constraints */
+    box-sizing: border-box;
+}
+  
+  .spcontainer1, .spcontainer2, .spcontainer3 {
+      margin: 10px 5%;
+      padding: 15px;
+      border-radius: 15px;
   }
   
-  /* Inner containers */
-  .spcontainer1{
-    flex: 1; /* Each container will take up equal space */
-    margin: 10px; /* Optional: Add margin around inner containers */
-    padding: 30px; /* Optional: Add padding inside inner containers */
-    margin-left: 10%;
-   
-    border: 1px solid #00000000; /* Optional: Add a border around inner containers */
-    background-color: rgb(255, 255, 255);
-    border-radius: 30px;
-   
+  .sph2 {
+      font-size: 16px;
+      padding: 10px;
   }
-
-  .spcontainer2{
-    flex: 2.5; /* Each container will take up equal space */
-    margin: 10px; /* Optional: Add margin around inner containers */
-    margin-right: 10%;
-    padding: 30px; /* Optional: Add padding inside inner containers */
-    border: 1px solid #00000000; /* Optional: Add a border around inner containers */
-    background-color: rgb(255, 255, 255);
-    border-radius: 30px;
-  }
-  .spcontainer3{
-    flex: 2.5; /* Each container will take up equal space */
-    margin: 10px; /* Optional: Add margin around inner containers */
-    margin-right: 10%;
-    margin-left: 10%;
-    padding: 30px; /* Optional: Add padding inside inner containers */
-    border: 1px solid #00000000; /* Optional: Add a border around inner containers */
-    background-color: rgb(255, 255, 255);
-    border-radius: 30px;
-  }
-
-  .sph2{
-    font-family: "Open Sans", sans-serif;
-    /* font-optical-sizing: auto; */
-    font-weight: 400;
-    font-style: normal;
   
-    align-items: center;
-    justify-content: center;
-    /* font-variation-settings: "wdth" 70; */
-    color: #1f1f1f;
-    line-height: 1.6;
-   
-    font-size: 1.2vw;
-    padding: 20px;
-    transition-property: background, filter;
-   
-    z-index: 3; /* Highest z-index to ensure it is above everything else */
-    margin: 0; /* Remove default margins */
+  .spabm {
+      font-size: 16px;
+      padding: 10px;
   }
-
-
-  .spabm{
-    font-family: "Open Sans", sans-serif;
-    /* font-optical-sizing: auto; */
-    font-weight: 400;
-    font-style: normal;
-   display: flex;
-   flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* font-variation-settings: "wdth" 70; */
-    color:rgb(90, 90, 90);
-    line-height: 1.6;
-   
-    font-size: 1.2vw;
-    padding: 20px;
-    transition-property: background, filter;
-   
-    z-index: 3; /* Highest z-index to ensure it is above everything else */
-    margin: 0; /* Remove default margins */
+  
+  .sph3 {
+      font-size: 18px;
   }
-
-
-  .experience-item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    margin-bottom: 15px;
+  
+  .sph1, .sph1.ip, .sph1.ds, .sph1.da, .sph1.wd {
+      font-size: 20px;
   }
   
   .company-logo {
-    width: 2vw;
-    height: auto;
-    transition: transform 0.2s ease-in-out;
-    margin-right: 10px;
-  }
-  
-  .company-logo:hover {
-    transform: scale(1.1);
+      width: 25px;
   }
   
   .job-details {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-  }
-  
-  .job-title {
-    font-family: "Open Sans", sans-serif;
-    /* font-optical-sizing: auto; */
-    font-weight: 400;
-    font-style: normal;
-    flex: 1;
+      /* flex-direction: column; */
+      align-items: flex-start;
   }
   
   .job-date {
-    text-align: right;
-    color: rgb(90, 90, 90);
+      text-align: left;
+      font-size: 10px;
+      margin-top: 5px;
   }
   
   .job-description {
-    font-size: 0.9em;
-    color: #555;
-    margin-left: 40px; /* Adjust to align text properly */
+      margin-left: 10px;
+      font-size: 17px;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .spcontainer1, .spcontainer2, .spcontainer3 {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
   }
   
-  
-
-  .sph3{
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 450;
-    font-style: normal;
-  
-    align-items: center;
-    justify-content: center;
-    font-variation-settings: "wdth" 70;
-    background: linear-gradient( #212541,#212541);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-   
-    font-size: 1.5vw;
-    transition-property: background, filter;
-   
-    z-index: 3; /* Highest z-index to ensure it is above everything else */
-    margin: 0; /* Remove default margins */
-  }
-
-
-
-  .sph1 {
-    background: linear-gradient(200deg,  #ff6cdf, #58227c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    font-size: 2vw;
-  
-    transition-property: background, filter;
-    transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-    z-index: 3; /* Highest z-index to ensure it is above everything else */
-    margin: 0; /* Remove default margins */
-    opacity: 0; /* Initially invisible */
-    
-  }
-
-  .sph1.ip {
-    background: linear-gradient(200deg,  #ff6c6c, #2e227c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    font-size: 2vw;
-    transition-property: background, filter;
-    transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-    z-index: 3; /* Highest z-index to ensure it is above everything else */
-    margin: 0; /* Remove default margins */
-    opacity: 0; /* Initially invisible */
-    animation: fadeIn 2s ease-in forwards; /* Fade-in animation */
-  }
-
-  .sph1.ds {
-    background: linear-gradient(200deg,  #6cff9b, #22267c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    font-size: 2vw;
-    transition-property: background, filter;
-    transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-    z-index: 3; /* Highest z-index to ensure it is above everything else */
-    margin: 0; /* Remove default margins */
-    opacity: 0; /* Initially invisible */
-    animation: fadeIn 2s ease-in forwards; /* Fade-in animation */
-  }
-
-  .sph1.da {
-    background: linear-gradient(200deg,  #ff6cdf, #520d0d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    font-size: 2vw;
-    transition-property: background, filter;
-    transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-    z-index: 3; /* Highest z-index to ensure it is above everything else */
-    margin: 0; /* Remove default margins */
-    opacity: 0; /* Initially invisible */
-    animation: fadeIn 2s ease-in forwards; /* Fade-in animation */
-  }
-
-  .sph1.wd {
-    background: linear-gradient(200deg,  #ff6cdf, #58227c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    font-size: 2vw;
-    transition-property: background, filter;
-    transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-    z-index: 3; /* Highest z-index to ensure it is above everything else */
-    margin: 0; /* Remove default margins */
-    opacity: 0; /* Initially invisible */
-    animation: fadeIn 2s ease-in forwards; /* Fade-in animation */
+  .sph2 {
+      font-size: 14px;
+      padding: 8px;
   }
   
-  .sph1.fade-in {
-    opacity: 1; /* Fade in to visible */
-    animation: fadeIn 0.5s ease-in forwards; /* Fade-in animation */
+  .spabm {
+      font-size: 14px;
+      padding: 8px;
   }
   
-  .sph1:hover {
-    filter: hue-rotate(270deg);
+  .sph3 {
+      font-size: 16px;
   }
   
-  @keyframes fadeIn {
-    to {
-      opacity: 1; /* Fade in to visible */
-    }
+  .sph1, .sph1.ip, .sph1.ds, .sph1.da, .sph1.wd {
+      font-size: 18px;
   }
+  
+  .experience-item {
+      margin-bottom: 10px;
+  }
+}
 
-  .fade-in-section {
-    opacity: 0;
-
-    transform: translateY(7vh);
-    visibility: hidden;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    will-change: opacity, visibility;
-  }
-  .fade-in-section.is-visible {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-  }
-
-  .focus-text-section {
-    filter: blur(8px);
-    opacity: 0;
-    transition: opacity 0.8s ease-in-out, filter 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-    will-change: opacity, filter;
-    visibility: hidden;
+/* For landscape orientation on mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .sp-big-container {
+      flex-direction: row;
+      flex-wrap: wrap;
   }
   
-  .focus-text-section.is-visible {
-    animation: focusTextEffect 2s forwards;
-    visibility: visible;
+  .spcontainer1, .spcontainer2, .spcontainer3 {
+      flex: 1 1 45%;
+      min-width: 300px;
   }
   
-  @keyframes focusTextEffect {
-    0% {
-      opacity: 0;
-      filter: blur(8px);
-    }
-    20% {
-      opacity: 0.7;
-      filter: blur(0px);
-    }
-    45% {
-      opacity: 0.85;
-      filter: blur(1px);
-    }
-    60% {
-      opacity: 0.9;
-      filter: blur(2px);
-    }
-    75% {
-      opacity: 0.95;
-      filter: blur(1px);
-    }
-    100% {
-      opacity: 1;
-      filter: blur(0px);
-    }
+  .sph2 {
+      font-size: 14px;
   }
+  
+  .spabm {
+      font-size: 14px;
+  }
+  
+  .sph3 {
+      font-size: 16px;
+  }
+  
+  .sph1, .sph1.ip, .sph1.ds, .sph1.da, .sph1.wd {
+      font-size: 18px;
+  }
+}

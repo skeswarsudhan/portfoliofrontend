@@ -1,15 +1,13 @@
 .container {
   display: flex;
   height: 100vh;
-  background-color: rgb(217, 217, 217,0);
+  background-color: rgb(217, 217, 217, 0);
   align-items: center;
   justify-content: center;
   /* background-image: url('../media/bgpage1.jpg');
   background-size:cover;
   background-repeat: no-repeat;
   background-position: center; */
- 
-  
 }
 
 .mp-maincon2 {
@@ -19,16 +17,12 @@
   background-color: rgb(255, 255, 255);
   border-radius: 30px;
   background-image: url('../media/pfbg.jpg');
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   /* animation: scaleDown 1.5s ease-out forwards; */
   overflow: hidden; /* Ensures child elements don't overflow */
 }
-
-
-
-
 
 .mp-maincon {
   position: absolute;
@@ -52,8 +46,6 @@
     background-position: center; /* Move to normal position */
   }
 }
-
-
 
 @keyframes scaleDown {
   from {
@@ -84,8 +76,6 @@
   /* animation: scaleUp 1.5s ease-out forwards; */
 }
 
-
-
 .mp-text-container {
   display: flex;
   flex-direction: column;
@@ -99,17 +89,15 @@
   background-color: transparent; /* Make background transparent */
   z-index: 2; /* Higher z-index to ensure it overlaps the image */
   position: absolute; /* Absolute positioning for overlap */
-  
- 
 }
 
 .mp-text-container.left {
-  top:35%;
+  top: 35%;
   left: 7%; /* Adjust left position as needed */
 }
 
 .mp-text-container.right {
-  top:50%;
+  top: 50%;
   right: 7%; /* Adjust right position as needed */
 }
 
@@ -123,12 +111,11 @@
   position: relative;
 }
 
-
 .mph1 {
   padding: 30px;
   margin-bottom: 1vh;
   background-color: #11121a00;
-  background: linear-gradient(130deg,  #59b7ff , #ff7676);
+  background: linear-gradient(130deg, #59b7ff, #ff7676);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -139,10 +126,11 @@
   font-weight: 500;
   font-style: normal;
   font-size: 7vw;
+  padding-top: 5vh;
+  padding-bottom: 4vh;
   z-index: 300;
   margin: 0;
   opacity: 1;
- 
   /* animation: reveal 2s ease-out forwards, fadeIn 2s ease-in forwards; */
 }
 
@@ -166,16 +154,15 @@
   }
 }
 
-
 .mph1:hover {
   filter: hue-rotate(270deg);
 }
 
 .mph2 {
-  background: linear-gradient(200deg, #b6b6b6, #11121a,  #989898);
+  background: linear-gradient(200deg, #b6b6b6, #11121a, #989898);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-top:2vh;
+  padding-top: 2vh;
   padding-bottom: 2vh;
   font-size: 4vw;
   font-weight: 400;
@@ -194,11 +181,169 @@ img {
   z-index: 0; /* Ensure image is at the bottom */
 }
 
-/* @keyframes fadeIn {
-  from {
-    opacity: 1;
+/* Mobile-specific styles */
+@media screen and (max-width: 1400px) {
+  .container {
+    padding: 10px;
+    box-sizing: border-box;
   }
-  to {
-    opacity: 1;
+
+  .mp-maincon2 {
+    height: auto;
+    min-height: 70vh;
+    width: 95%;
+  }
+  
+  .overlay-image {
+    width: 60vh;
+    left: 50%;
+    top: 70%;
+    z-index: 1000;
+  }
+  
+  .mp-text-container.left,
+  .mp-text-container.right {
+    position: relative;
+    top: 7%;
+    left: auto;
+    right: auto;
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .mp-text-container.left {
+    margin-top: 5vh;
+  }
+  
+  .mp-text-container.right {
+    margin-bottom: 5vh;
+  }
+  
+  .mph1 {
+    font-size: 7vh;
+    padding: 20px;
+    
+  }
+  
+  .mph2 {
+    font-size: 5vh;
+    white-space: normal;
+  }
+  
+  .mp-image-container {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* @media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .mp-maincon2 {
+    height: auto;
+    min-height: 70vh;
+    width: 95%;
+  }
+  
+  
+  
+  .mp-text-container.left,
+  .mp-text-container.right {
+    position: relative;
+    top: 7%;
+    left: auto;
+    right: auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .mp-text-container.left {
+    margin-top: 5vh;
+  }
+  
+  .mp-text-container.right {
+    margin-bottom: 5vh;
+  }
+  
+  .mph1 {
+    font-size: 10vw;
+    padding: 15px;
+  }
+  
+  .mph2 {
+    font-size: 6vw;
+    white-space: normal;
+  }
+  
+  .mp-image-container {
+    width: 100%;
+    padding: 10px;
   }
 } */
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .mp-maincon2 {
+    border-radius: 15px;
+  }
+  
+  .mph1 {
+    font-size: 12vw;
+    padding: 10px;
+  }
+  
+  .mph2 {
+    font-size: 8vw;
+  }
+  
+  .overlay-image {
+   top:78%
+  }
+
+  .overlay-image {
+    width: 50vh;
+    left: 50%;
+    top: 78%;
+  }
+  
+}
+
+/* For landscape orientation on mobile */
+@media screen and (max-width: 1400px) and (orientation: landscape) {
+  .mp-maincon2 {
+    height: auto;
+    min-height: 90vh;
+  }
+  
+  .mp-text-container.left,
+  .mp-text-container.right {
+    width: 60%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .mph1 {
+    font-size: 6vw;
+    padding:0;
+  }
+  
+  .mph2 {
+    font-size: 3vw;
+    padding: 0;
+    padding-top: 7vh;
+  }
+  
+  .overlay-image {
+    width: 125vh;
+    top: 50%;
+    left: 70%;
+  }
+}

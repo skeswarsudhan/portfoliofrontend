@@ -131,153 +131,79 @@ const FeedbackPage = () => {
 
   return (
     <div className='feedbackcon'>
-      <div className='feedbackcon2'>
-      {showForm ? (
-        <div>
-          <div className='projecttitlecard'>Let me know what you think!</div>
+      {/* <div className='feedbackcon2'> */}
+      
+    {showForm ? (
+      <div  style={{width:'100%'}}>
+        <div className='projecttitlecard'>Let me know what you think!</div>
 
-          <div style={{ height: '40vh' }}>
-            <div
-              style={{
-                maxWidth: '700px',
-                margin: 'auto',
-                padding: '20px',
-                boxShadow: '0 0 10px rgba(0,0,0,0.1)',
-                borderRadius: '10px',
-                marginTop: '50px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                backgroundColor: 'rgb(240,240,240)',
-                fontWeight: '400',
-                marginBottom:'1vh'
-              }}
-            >
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                <input
-                  type='text'
-                  placeholder='Name'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  style={{ padding: '10px', fontSize: '16px', borderRadius: '5px', border: '1px solid rgb(0,0,0,0)' }}
-                />
-                <input
-                  type='email'
-                  placeholder='Email'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  style={{ padding: '10px', fontSize: '16px', borderRadius: '5px', border: '1px solid rgb(0,0,0,0)' }}
-                />
-                <textarea
-                  placeholder='Comments'
-                  value={comments}
-                  onChange={(e) => setComments(e.target.value)}
-                  rows='4'
-                  required
-                  style={{
-                    padding: '10px',
-                    fontSize: '16px',
-                    borderRadius: '5px',
-                    border: '1px solid rgb(0,0,0,0)',
-                    maxWidth: '100%',
-                    resize: 'none',
-                    overflow: 'auto',
-                  }}
-                />
-                <button
-                  className='buttonincon'
-                  type='submit'
-                  disabled={feedbackSubmitted === 'Sending...'}
-                  style={{
-                    padding: '10px',
-                    fontSize: '16px',
-                    borderRadius: '5px',
-                    border: 'none',
-                    backgroundColor: '#007bff',
-                    color: '#fff',
-                    cursor: feedbackSubmitted === 'Sending...' ? 'not-allowed' : 'pointer',
-                    opacity: feedbackSubmitted === 'Sending...' ? 0.6 : 1,
-                  }}
-                >
-                  {feedbackSubmitted}
-                </button>
-              </form>
-            </div>
+        <div className='form-container'>
+          <div className='feedback-form'>
+            <form onSubmit={handleSubmit} className='form'>
+              <input
+                type='text'
+                placeholder='Name'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className='form-input'
+              />
+              <input
+                type='email'
+                placeholder='Email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className='form-input'
+              />
+              <textarea
+                placeholder='Comments'
+                value={comments}
+                onChange={(e) => setComments(e.target.value)}
+                rows='4'
+                required
+                className='form-textarea'
+              />
+              <button
+                className={`buttonincon ${feedbackSubmitted === 'Sending...' ? 'sending' : ''}`}
+                type='submit'
+                disabled={feedbackSubmitted === 'Sending...'}
+              >
+                {feedbackSubmitted}
+              </button>
+            </form>
           </div>
         </div>
-      ) : (
-        <div className='projecttitlecardfp'>
-          {/* Show "Thank you" message */}
-          <div>Thank you, {isFeedbackSubmit}, for your feedback!</div>
+      </div>
+    ) : (
+      <div className='projecttitlecardfp'>
+        {/* Show "Thank you" message */}
+        <div>Thank you, {isFeedbackSubmit}, for your feedback!</div>
 
-          {/* Mail icons container */}
-          {showMailIcons && (
-            
-            <div>
-            <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: '20px',
-                position: 'relative',
-                height: '100px',
-              }}
-            >
+        {/* Mail icons container */}
+        {showMailIcons && (
+          <div className='mail-icons-wrapper'>
+            <div className='mail-icons-container'>
               {mailIcons}
-              
             </div>
-              <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: '20px',
-                position: 'relative',
-                height: '100px',
-              }}
-            >
+            <div className='mail-icons-container'>
               {mailIcons1}
-              
             </div>
-              <div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: '20px',
-                position: 'relative',
-                height: '100px',
-              }}
-            >
+            <div className='mail-icons-container'>
               {mailIcons2}
-              
             </div>
-            </div>
-          )}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
-
-          <button className='buttoninconnew' 
-          style={{
-            padding: '10px',
-            fontSize: '16px',
-            borderRadius: '5px',
-            border: 'none',
-            backgroundColor: '#007bff',
-            color: '#fff',
-            cursor: 'pointer',
-          }}
-          onClick={resetFeedback}>
+          </div>
+        )}
+        <div className='button-container'>
+          <button className='buttoninconnew' onClick={resetFeedback}>
             New Feedback
           </button>
-          </div>
+        </div>
+      </div>
+    )}
+ 
 
-          </div>
-      )}
-
-      <div className='contact-page'>
+      {/* <div className='contact-page'>
         <div style={{ display: 'flex', flexDirection: 'column', padding: '30px' }}>
           <div className='contact-item'>
             <GitHubIcon className='contact-icon' />
@@ -302,8 +228,8 @@ const FeedbackPage = () => {
             <span> {contactDetails.location}</span>
           </div>
         </div>
-      </div>
-      </div>
+      </div> */}
+      {/* </div> */}
     </div>
   );
 };

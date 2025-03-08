@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './mainpage.css';
 import imgpf from '../media/pfup2.png'
 
-const MainPage = () => {
+const MainPage = ( isSmallScreen ) => {
   const [greetings, setGreetings] = useState("");
   const [name, setName] = useState("");
   const fullName = "Eswar Sudhan";

@@ -2,11 +2,11 @@ import MainPage from "../components/mainPage";
 import SecondPage from "../components/secondPage";
 import './mainandsecondpage.css'
 
-const MainandSecondPage = () => {
+const MainandSecondPage = ( isSmallScreen ) => {
   return (
     <div className="mscon">
-      <MainPage />
-      <SecondPage />
+      <MainPage isSmallScreen={isSmallScreen}/>
+      <SecondPage isSmallScreen={isSmallScreen}/>
     </div>
   );
 };

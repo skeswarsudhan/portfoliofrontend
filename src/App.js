@@ -241,10 +241,10 @@ function App() {
   useEffect(() => {
     const checkRestrictions = () => {
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      const isMobileDevice = /android|iphone|ipad|ipod|blackberry|opera mini|iemobile|mobile/i.test(userAgent);
+      // const isMobileDevice = /android|iphone|ipad|ipod|blackberry|opera mini|iemobile|mobile/i.test(userAgent);
       const isSmallScreen = window.innerWidth <= 768 || window.innerHeight <= 500;
 
-      if (isMobileDevice || isSmallScreen) {
+      if (isSmallScreen) {
         setIsRestricted(true);
       } else {
         setIsRestricted(false);
@@ -257,17 +257,17 @@ function App() {
     return () => window.removeEventListener('resize', checkRestrictions);
   }, []);
 
-  if (isRestricted) {
-    return (
-      <div className="mobile-message">
-        <video autoPlay loop muted className="video-bg">
-        <source src={videoBg} type="video/mp4" />
-        {/* Your browser does not support the video tag. */}
-      </video>
-        This website is not available on mobile devices or small screens. Kindly use a desktop for the best experience. A responsive version is coming soon!
-      </div>
-    );
-  }
+  // if (isRestricted) {
+  //   return (
+  //     <div className="mobile-message">
+  //       <video autoPlay loop muted className="video-bg">
+  //       <source src={videoBg} type="video/mp4" />
+  //       {/* Your browser does not support the video tag. */}
+  //     </video>
+  //       This website is not available on mobile devices or small screens. Kindly use a desktop for the best experience. A responsive version is coming soon!
+  //     </div>
+  //   );
+  // }
 
 
 
@@ -320,14 +320,14 @@ function App() {
     path="/portfolio"
     element={
       <>
-        <MainandSecondPage/>
+        <MainandSecondPage isSmallScreen = { isRestricted }/>
         <div ref={projectsRef}>
-          <Projects projectData={projectData} photoData={photoData} />
+          <Projects projectData={projectData} photoData={photoData} isSmallScreen = { isRestricted } />
         </div>
         <div ref={photographyRef}>
-          <Photography photoData={photoData} />
+          <Photography photoData={photoData} isSmallScreen = { isRestricted } />
         </div>
-        <FeedbackPage />
+        <FeedbackPage isSmallScreen = { isRestricted }/>
         {/* <ContactPage/> */}
       </>
     }
