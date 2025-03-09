@@ -6,12 +6,13 @@
     height: 100vh;
     text-align: center;
     background-color: #f8f9fa;
+    
   }
   
   .error-container h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #dc3545;
+    color: #414141;
   }
   
   .error-container p {
