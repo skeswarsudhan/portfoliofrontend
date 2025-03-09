@@ -9,7 +9,7 @@
 
 /* Container Styles */
 .feedbackcon {
-  background: linear-gradient(180deg, rgb(217, 217, 217), rgba(217, 217, 217, 0.651));
+  background: linear-gradient(180deg, rgb(217, 217, 217), rgba(217, 217, 217, 0.412));
   padding-bottom: 1vh;
   width: 100%;
   display: flex;

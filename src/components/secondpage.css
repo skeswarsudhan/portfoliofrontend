@@ -376,6 +376,11 @@
   .sph1, .sph1.ip, .sph1.ds, .sph1.da, .sph1.wd {
       font-size: 18px;
   }
+
+  .job-description{
+    font-size: 14px;
+
+  }
   
   .experience-item {
       margin-bottom: 10px;
