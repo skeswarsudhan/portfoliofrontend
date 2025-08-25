@@ -21,7 +21,6 @@ const MainPage = ( isSmallScreen ) => {
       setGreetings("Hello");
     }
 
-    // Start typing effect after a 2-second delay
     const delayTimeout = setTimeout(() => {
       let index = 0;
       const interval = setInterval(() => {
