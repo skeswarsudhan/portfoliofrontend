@@ -1,115 +1,190 @@
-import React, { useEffect, useState, useRef } from 'react';
-import './secondpage.css'; // Assuming you have a secondpage.css file for styling
-import imgurl from '../media/pf1.jpg';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import './secondpage.css';
 import imgtur from '../media/turing-logo.jpg'
 import imgfcr from '../media/FocurR_arrow.png'
 
-function FadeInSection(props) {
+function FadeInSection({ children, delay = 0 }) {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef();
+  const observerRef = useRef();
+  const timeoutRef = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const currentRef = domRef.current;
+    
+    observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.intersectionRatio >= 0.3) {
-            setVisible(true);
-            observer.disconnect(); // Stop observing once visible
+            // Add delay if specified
+            timeoutRef.current = setTimeout(() => {
+              setVisible(true);
+            }, delay);
+            observerRef.current?.disconnect();
           }
         });
       },
-      { threshold: 0.3 } // Trigger when 30% of the element is visible
+      { threshold: 0.3 }
     );
 
-    if (domRef.current) {
-      observer.observe(domRef.current);
+    if (currentRef) {
+      observerRef.current.observe(currentRef);
     }
 
     return () => {
-      if (observer && domRef.current) {
-        observer.unobserve(domRef.current);
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
       }
     };
-  }, []);
+  }, [delay]);
 
   return (
     <div
       className={`focus-text-section ${isVisible ? "is-visible" : ""}`}
       ref={domRef}
     >
-      {props.children}
+      {children}
     </div>
   );
 }
 
-const SecondPage = () => {
+const SecondPage = ({ isSmallScreen }) => {
+  const [imagesLoaded, setImagesLoaded] = useState({
+    turing: false,
+    focusr: false
+  });
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  const handleImageLoad = useCallback((imageName) => {
+    setImagesLoaded(prev => ({
+      ...prev,
+      [imageName]: true
+    }));
+  }, []);
+
+  const handleImageError = useCallback((imageName) => {
+    console.error(`Failed to load ${imageName} image`);
+    setImagesLoaded(prev => ({
+      ...prev,
+      [imageName]: true
+    }));
+  }, []);
+
+  // Preload images
+  useEffect(() => {
+    const preloadImages = async () => {
+      try {
+        const imagePromises = [
+          { name: 'turing', src: imgtur },
+          { name: 'focusr', src: imgfcr }
+        ].map(({ name, src }) => {
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.onload = () => {
+              handleImageLoad(name);
+              resolve();
+            };
+            img.onerror = () => {
+              handleImageError(name);
+              resolve();
+            };
+            img.src = src;
+          });
+        });
+
+        await Promise.all(imagePromises);
+        setIsInitialized(true);
+      } catch (error) {
+        console.error('Error preloading images:', error);
+        setIsInitialized(true);
+      }
+    };
+
+    preloadImages();
+  }, [handleImageLoad, handleImageError]);
+
+  // Show loading state until images are preloaded
+  if (!isInitialized) {
+    return (
+      <div className="sp-big-container">
+        <div className="loading-container">
+          <div className="loading-placeholder">Loading content...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="sp-big-container">
-      {/* <FadeInSection> */}
       <div className="spcontainer3">
-      <h2 className="spabm">
-      <h3 className='sph3'>About Me</h3> 
-      <FadeInSection>
-      Hello, welcome to my portfolio! I am an engineer with a B.Tech degree in AI. I enjoy designing and developing end-to-end applications, working on AI, and taking photos. You can explore my work on this page.
-       </FadeInSection>
-      </h2>
+        <h2 className="spabm">
+          <h3 className='sph3'>About Me</h3> 
+          <FadeInSection delay={0}>
+            Hello, welcome to my portfolio! I am an engineer with a B.Tech degree in AI. I enjoy designing and developing end-to-end applications, working on AI, and taking photos. You can explore my work on this page.
+          </FadeInSection>
+        </h2>
       </div>
-        <div className='sp-big-container1'>
-          <div className="spcontainer1">
-            {/* <h3 className="sph3">About me:</h3> */}
-            <h2 className="sph2">
-              <h3 className='sph3'>I know:</h3> 
-              <FadeInSection>
-              <h3 className='spabm'>
-                Python, MATLAB, SQL, Git, TensorFlow, PyTorch,HTML, CSS, Reactjs, MySQL, Django RestFramework, Flask, MongoDB.
-              </h3>
-              </FadeInSection>
-            </h2>
-          </div>
-
-          <div className="spcontainer2">
-  <h2 className="sph2">
-    <h3 className="sph3" style={{paddingBottom:'0.5vw'}}>Experience:</h3>
-    <FadeInSection>
-    <div className="experience-item">
       
-      <div className="job-details">
-      <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">
-        <img src={imgtur} alt="Turing Logo" className="company-logo" />
-      </a>
-        <p className="job-title">Turing - Data Analyst</p>
-        <p className="job-date">Aug 2024 – Present</p>
-      </div>
-      <p className="job-description">
-        Analyzed Python code from back-end, data science, and machine learning domains generated by LLMs, 
-        reporting inefficiencies and limitations in coding capabilities to clients including Apple, Amazon, and ByteDance.
-      </p>
-    </div>
-   
-
-    <div className="experience-item">
-     
-      <div className="job-details">
-      <a href="https://www.focusrtech.com" target="_blank" rel="noopener noreferrer">
-        <img src={imgfcr} alt="FocusR Logo" className="company-logo" />
-      </a>
-        <p className="job-title">FocusR - Python and AI Developer (Internship)</p>
-        <p className="job-date">Feb 2024 – May 2024</p>
-      </div>
-      <p className="job-description">
-        Built a Large Language Model (LLM)-powered hiring application using React.js for the front-end and Django REST 
-        Framework for the back-end. Integrated LLM technology for advanced candidate shortlisting.
-      </p>
-    </div>
-    </FadeInSection>
-  </h2>
-</div>
-
-
+      <div className='sp-big-container1'>
+        <div className="spcontainer1">
+          <h2 className="sph2">
+            <h3 className='sph3'>I know:</h3> 
+            <FadeInSection delay={200}>
+              <h3 className='spabm'>
+                Python, MATLAB, SQL, Git, TensorFlow, PyTorch, HTML, CSS, React.js, MySQL, Django RestFramework, Flask, MongoDB.
+              </h3>
+            </FadeInSection>
+          </h2>
         </div>
-      {/* </FadeInSection> */}
 
-     
+        <div className="spcontainer2">
+          <h2 className="sph2">
+            <h3 className="sph3" style={{paddingBottom:'0.5vw'}}>Experience:</h3>
+            <FadeInSection delay={400}>
+              <div className="experience-item">
+                <div className="job-details">
+                  <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={imgtur} 
+                      alt="Turing Logo" 
+                      className={`company-logo ${imagesLoaded.turing ? 'loaded' : 'loading'}`}
+                      style={{ opacity: imagesLoaded.turing ? 1 : 0 }}
+                    />
+                  </a>
+                  <p className="job-title">Turing - Data Analyst</p>
+                  <p className="job-date">Aug 2024 – Present</p>
+                </div>
+                <p className="job-description">
+                  Analyzed Python code from back-end, data science, and machine learning domains generated by LLMs, 
+                  reporting inefficiencies and limitations in coding capabilities to clients including Apple, Amazon, and ByteDance.
+                </p>
+              </div>
+
+              <div className="experience-item">
+                <div className="job-details">
+                  <a href="https://www.focusrtech.com" target="_blank" rel="noopener noreferrer">
+                    <img 
+                      src={imgfcr} 
+                      alt="FocusR Logo" 
+                      className={`company-logo ${imagesLoaded.focusr ? 'loaded' : 'loading'}`}
+                      style={{ opacity: imagesLoaded.focusr ? 1 : 0 }}
+                    />
+                  </a>
+                  <p className="job-title">FocusR - Python and AI Developer (Internship)</p>
+                  <p className="job-date">Feb 2024 – May 2024</p>
+                </div>
+                <p className="job-description">
+                  Built a Large Language Model (LLM)-powered hiring application using React.js for the front-end and Django REST 
+                  Framework for the back-end. Integrated LLM technology for advanced candidate shortlisting.
+                </p>
+              </div>
+            </FadeInSection>
+          </h2>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './mainpage.css';
-import imgpf from '../media/pfup2.png'
+import imgpf from '../media/pfup2-min.png'
 
 const MainPage = ( isSmallScreen ) => {
   const [greetings, setGreetings] = useState("");

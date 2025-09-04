@@ -1,17 +1,15 @@
+/* Optimized CSS to prevent double rendering */
+
 .container {
   display: flex;
   height: 100vh;
   background-color: rgb(217, 217, 217, 0);
   align-items: center;
   justify-content: center;
-  /* background-image: url('../media/bgpage1.jpg');
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center; */
 }
 
 .mp-maincon2 {
-  position: relative; /* This ensures absolute children are positioned relative to this */
+  position: relative;
   height: 80%;
   width: 88%;
   background-color: rgb(255, 255, 255);
@@ -20,8 +18,49 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  /* animation: scaleDown 1.5s ease-out forwards; */
-  overflow: hidden; /* Ensures child elements don't overflow */
+  overflow: hidden;
+  /* Remove conflicting animations */
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Additional scaling for ultra-wide screens */
+@media screen and (min-width: 2000px) {
+  .mph1 {
+    font-size: clamp(4rem, min(6vw, 10vh), 12rem);
+  }
+  
+  .mph2 {
+    font-size: clamp(2rem, min(3vw, 5vh), 6rem);
+  }
+}
+
+/* Additional scaling for very tall screens */
+@media screen and (min-height: 1200px) {
+  .mph1 {
+    font-size: clamp(3rem, min(7vw, 12vh), 10rem);
+    padding-top: clamp(4vh, 6vh, 8vh);
+  }
+  
+  .mph2 {
+    font-size: clamp(1.5rem, min(4vw, 6vh), 5rem);
+    padding-top: clamp(2vh, 4vh, 6vh);
+  }
+}
+
+/* Loading state for smooth transition */
+.mp-maincon2.loading-state {
+  background-image: none;
+  background-color: #f0f0f0;
+}
+
+.loading-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  font-size: 1.2rem;
 }
 
 .mp-maincon {
@@ -30,50 +69,34 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-image: url('../media/pfup2.png'); */
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: -20px center; /* Start slightly left */
+  background-position: center;
   z-index: 2;
-  /* animation: bgSlideIn 1.5s ease-out forwards; */
+  /* Remove conflicting animations */
 }
 
-@keyframes bgSlideIn {
-  from {
-    background-position: -20px center; /* Start 20px to the left */
-  }
-  to {
-    background-position: center; /* Move to normal position */
-  }
-}
-
-@keyframes scaleDown {
-  from {
-    background-size: 150%;
-  }
-  to {
-    background-size: cover;
-  }
-}
-
-@keyframes scaleUp {
-  from {
-    background-size: 90%;
-  }
-  to {
-    background-size: 100%;
-  }
-}
-
+/* Optimized image loading states */
 .overlay-image {
   position: absolute;
   top: 50%;
   left: 75%;
-  transform: translate(-50%, -50%) scale(0.8); /* Start at 80% size */
+  transform: translate(-50%, -50%) scale(0.8);
   width: 125vh;
   height: auto;
-  opacity: 1; /* Adjust overlay visibility */
-  /* animation: scaleUp 1.5s ease-out forwards; */
+  z-index: 1;
+  /* Smooth transition instead of conflicting animations */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.overlay-image.loading {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.overlay-image.loaded {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(0.8);
 }
 
 .mp-text-container {
@@ -86,31 +109,22 @@
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "wdth" 70;
-  background-color: transparent; /* Make background transparent */
-  z-index: 2; /* Higher z-index to ensure it overlaps the image */
-  position: absolute; /* Absolute positioning for overlap */
+  background-color: transparent;
+  z-index: 3;
+  position: absolute;
 }
 
 .mp-text-container.left {
   top: 35%;
-  left: 7%; /* Adjust left position as needed */
+  left: 7%;
 }
 
 .mp-text-container.right {
   top: 50%;
-  right: 7%; /* Adjust right position as needed */
+  right: 7%;
 }
 
-.mp-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 46.5%;
-  padding: 20px;
-  z-index: 1; /* Lower z-index to ensure image is below text */
-  position: relative;
-}
-
+/* Optimized text animations - no conflicting keyframes */
 .mph1 {
   padding: 30px;
   margin-bottom: 1vh;
@@ -119,9 +133,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-  transition-property: filter;
-  transition-duration: 2s;
-  transition-timing-function: ease-in-out;
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -131,27 +142,8 @@
   z-index: 300;
   margin: 0;
   opacity: 1;
-  /* animation: reveal 2s ease-out forwards, fadeIn 2s ease-in forwards; */
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(0%); /* Start off-screen */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0); /* Move into place */
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  /* Simplified transition */
+  transition: filter 2s ease-in-out;
 }
 
 .mph1:hover {
@@ -166,23 +158,22 @@
   padding-bottom: 3vh;
   font-size: 4vw;
   font-weight: 400;
-  transition-property: background, filter;
-  -webkit-box-decoration-break: clone;
-  z-index: 10; /* Highest z-index to ensure it is above everything else */
-  margin: 0; /* Remove default margins */
-  display: inline-block; /* Prevents unnecessary clipping */
-  overflow: visible; /* Ensures text is not clipped */
-  white-space: nowrap; /* Prevents text wrapping */
-  /* margin-bottom:1vh; */
+  z-index: 10;
+  margin: 0;
+  display: inline-block;
+  overflow: visible;
+  white-space: nowrap;
+  /* Simplified transition */
+  transition: background 0.3s ease, filter 0.3s ease;
 }
 
 img {
   width: 100%;
   height: auto;
-  z-index: 0; /* Ensure image is at the bottom */
+  z-index: 0;
 }
 
-/* Mobile-specific styles */
+/* Responsive styles remain the same but with optimized transitions */
 @media screen and (max-width: 1400px) {
   .container {
     padding: 10px;
@@ -200,6 +191,10 @@ img {
     left: 50%;
     top: 75%;
     z-index: 1000;
+  }
+  
+  .overlay-image.loaded {
+    transform: translate(-50%, -50%) scale(0.8);
   }
   
   .mp-text-container.left,
@@ -227,7 +222,6 @@ img {
     font-size: 5vh;
     padding: 0;
     padding-top: 1vh;
-    
   }
   
   .mph2 {
@@ -242,59 +236,6 @@ img {
   }
 }
 
-
-
-/* @media screen and (max-width: 768px) {
-  .container {
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-  .mp-maincon2 {
-    height: auto;
-    min-height: 70vh;
-    width: 95%;
-  }
-  
-  
-  
-  .mp-text-container.left,
-  .mp-text-container.right {
-    position: relative;
-    top: 7%;
-    left: auto;
-    right: auto;
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  
-  .mp-text-container.left {
-    margin-top: 5vh;
-  }
-  
-  .mp-text-container.right {
-    margin-bottom: 5vh;
-  }
-  
-  .mph1 {
-    font-size: 10vw;
-    padding: 15px;
-  }
-  
-  .mph2 {
-    font-size: 6vw;
-    white-space: normal;
-  }
-  
-  .mp-image-container {
-    width: 100%;
-    padding: 10px;
-  }
-} */
-
-/* For very small screens */
 @media screen and (max-width: 480px) {
   .mp-maincon2 {
     border-radius: 15px;
@@ -310,18 +251,16 @@ img {
   }
   
   .overlay-image {
-   top:78%
-  }
-
-  .overlay-image {
     width: 50vh;
     left: 50%;
     top: 78%;
   }
   
+  .overlay-image.loaded {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 }
 
-/* For landscape orientation on mobile */
 @media screen and (max-width: 1400px) and (orientation: landscape) {
   .mp-maincon2 {
     height: auto;
@@ -330,8 +269,8 @@ img {
   
   .mp-text-container.left,
   .mp-text-container.right {
-    top:5%;
-    left:20%;
+    top: 5%;
+    left: 20%;
     width: 60%;
     display: inline-block;
     vertical-align: middle;
@@ -339,7 +278,7 @@ img {
   
   .mph1 {
     font-size: 6vw;
-    padding:0;
+    padding: 0;
   }
   
   .mph2 {
@@ -353,9 +292,13 @@ img {
     left: 50%;
     top: 70%;
   }
+  
+  .overlay-image.loaded {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 }
 
-@media screen and (max-width: 1400px) and (orientation: landscape) and (max-height: 600px){
+@media screen and (max-width: 1400px) and (orientation: landscape) and (max-height: 600px) {
   .mp-maincon2 {
     height: auto;
     min-height: 75vh;
@@ -363,8 +306,8 @@ img {
   
   .mp-text-container.left,
   .mp-text-container.right {
-    top:15%;
-    left:0%;
+    top: 15%;
+    left: 0%;
     width: 60%;
     display: inline-block;
     vertical-align: middle;
@@ -372,7 +315,7 @@ img {
   
   .mph1 {
     font-size: 6vw;
-    padding:0;
+    padding: 0;
   }
   
   .mph2 {
@@ -385,10 +328,12 @@ img {
     position: absolute;
     top: 50%;
     left: 75%;
-    transform: translate(-50%, -50%) scale(0.8); /* Start at 80% size */
     width: 125vh;
     height: auto;
     opacity: 1;
   }
+  
+  .overlay-image.loaded {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 }
-
