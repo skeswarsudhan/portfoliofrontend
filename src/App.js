@@ -203,7 +203,7 @@ function App() {
   useEffect(() => {
     const initializeChat = async () => {
       try {
-        const response = await axios.post('https://portfolioserver-kwag.onrender.com/initialize', {});
+        const response = await axios.get('https://portfolioserver-kwag.onrender.com/health', {});
         if (response.status === 200) {
           setChatbox('chatok');
         } else {
