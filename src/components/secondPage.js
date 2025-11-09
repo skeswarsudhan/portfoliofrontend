@@ -154,7 +154,7 @@ const SecondPage = ({ isSmallScreen }) => {
                       style={{ opacity: imagesLoaded.turing ? 1 : 0 }}
                     />
                   </a>
-                  <p className="job-title">Turing - Data Analyst</p>
+                  <p className="job-title">Turing - Python developer</p>
                   <p className="job-date">Aug 2024 – Present</p>
                 </div>
                 <p className="job-description">
